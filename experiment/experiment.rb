@@ -271,6 +271,50 @@ EOS
   end
 end
 
+###############################################################################
+
+class TsDotLanguageExperiment < DotLanguageExperiment
+  attr_reader :ns, :ds
+
+  def initialize(ns, ds)
+    @ns = ns
+    @ds = ds
+  end
+
+  def target(setting)
+    progname = setting[:progname]
+    runshell("npx ts-node #{ progname }")
+  end
+
+  def cleanup(setting)
+    runshell("rm #{ setting[:progname] }.ts")
+  end
+
+  def setup_library
+    runshell("~/.local/bin/typelevelLR --ts")
+    libname = 'DotLanguage'
+    libname
+  end
+
+  def generate_program(libname, n, d, chain)
+    chain = chain.collect do |m, args|
+      "#{ m }(#{ args.join(', ') })"
+    end.join('.')
+    program = <<EOS
+import * as #{ libname } from "./#{ libname }"
+
+#{ chain }.accept()
+EOS
+    progname = "experiment#{ n }_#{ d }"
+    File.open("#{ progname }.ts", 'w') do |file|
+      file.write(program)
+    end
+    progname
+  end
+end
+
+###############################################################################
+
 class CppDotLanguageExperiment < DotLanguageExperiment
   attr_reader :ns, :ds
 
@@ -333,6 +377,7 @@ config = {}
 opt.on('--hs', '--haskell') { config[:haskell] = true }
 opt.on('--scala') { config[:scala] = true }
 opt.on('--cpp') { config[:cpp] = true }
+opt.on('--ts') { config[:ts] = true }
 opt.on('-v', '--verbouse') { $verbouse = true }
 opt.on('-n N', '--max_n N') { |n| config[:max_n] = n.to_i }
 opt.on('-d D', '--max_d D') { |n| config[:max_d] = n.to_i }
@@ -341,12 +386,12 @@ opt.parse!(ARGV)
 
 ###############################################################################
 
-case [config[:haskell], config[:scala], config[:cpp]].count(true)
+case [config[:haskell], config[:scala], config[:cpp], config[:ts]].count(true)
 when 0
-  raise RuntimeError, "non of --haskell nor --scala nor --cpp is passed"
+  raise RuntimeError, "non of --haskell nor --scala nor --cpp nor --ts is passed"
 when 1
 else
-  raise RuntimeError, "multiple options of --haskell and --scala and --cpp are passed"
+  raise RuntimeError, "multiple options of --haskell and --scala and --cpp and --ts are passed"
 end
 
 max_n = config[:max_n] || 100
@@ -358,6 +403,7 @@ ds = 1 .. max_d
 experiment = if config[:haskell]; HaskellDotLanguageExperiment.new(ns, ds)
              elsif config[:scala]; ScalaDotLanguageExperiment.new(ns, ds)
              elsif config[:cpp]; CppDotLanguageExperiment.new(ns, ds)
+            elsif config[:ts]; TsDotLanguageExperiment.new(ns, ds)
              end
 
 results = experiment.invoke
@@ -368,4 +414,3 @@ results.each do |setting, result|
 end
 
 ###############################################################################
-
