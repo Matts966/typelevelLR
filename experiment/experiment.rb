@@ -283,11 +283,10 @@ class TsDotLanguageExperiment < DotLanguageExperiment
 
   def target(setting)
     progname = setting[:progname]
-    runshell("npx ts-node #{ progname }")
+    runshell("npx ts-node #{ progname }.ts")
   end
 
   def cleanup(setting)
-    runshell("rm #{ setting[:progname] }.ts")
   end
 
   def setup_library
@@ -303,7 +302,7 @@ class TsDotLanguageExperiment < DotLanguageExperiment
     program = <<EOS
 import * as #{ libname } from "./#{ libname }"
 
-#{ chain }.accept()
+DotLanguage.#{ chain }.accept()
 EOS
     progname = "experiment#{ n }_#{ d }"
     File.open("#{ progname }.ts", 'w') do |file|
