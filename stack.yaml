@@ -41,6 +41,7 @@ packages:
 # (e.g., acme-missiles-0.3)
 extra-deps:
 - optparse-declarative-0.3.0
+- mersenne-random-pure64-0.2.2.0
 
 # Override default flag values for local packages and extra-deps
 flags: {}

@@ -121,14 +121,14 @@ class RandomChainExperiment < Experiment
   def setup
     syntaxfile = find_syntax_file
     runshell("typelevelLR --#{ lang }")
-    libname = runshell("./GenRandomChainCI show-#{ lang }-libname #{ syntaxfile }").strip
+    libname = runshell("GenRandomChainCI show-#{ lang }-libname #{ syntaxfile }").strip
     ns.each do |n|
       ms.each do |m|
         filename = "#{ main }_n#{ n }_m#{ m }#{ ext }"
         syntaxfile = find_syntax_file
         begin
           unless File.exists?(filename)
-            runshell("./GenRandomChainCI gen-#{ lang }-chain -n #{ n } -o #{ filename } #{ syntaxfile }")
+            runshell("GenRandomChainCI gen-#{ lang }-chain -n #{ n } -o #{ filename } #{ syntaxfile }")
           end
           setting = { n: n, m: m, filename: filename, syntaxfile: syntaxfile, libname: libname }
           yield setting
@@ -164,10 +164,6 @@ class RandomChainExperiment < Experiment
 
     syntaxfile = find_syntax_file
     runshell("cp #{ syntaxfile } #{ workspace_name }/")
-    unless File.exists?('./GenRandomChainCI')
-      raise RuntimeError, "file not found -- GenRandomChainCI"
-    end
-    runshell("cp GenRandomChainCI #{ workspace_name }/")
 
     workspace_name
   end
@@ -273,15 +269,10 @@ class TsRandomChainExperiment < RandomChainExperiment
 
   def target(setting)
     filename = setting[:filename]
-    basename = File.basename(filename, '.ts')
-    libname  = setting[:libname]
-    runshell("npx ts-node #{ basename }")
+    runshell("npx ts-node #{ filename }")
   end
 
   def cleanup(setting)
-    filename = setting[:filename]
-    basename = File.basename(filename, '.cpp')
-    runshell("rm #{ basename } #{ basename }.o")
   end
 end
 

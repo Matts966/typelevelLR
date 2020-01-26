@@ -77,6 +77,26 @@ generateScala n_ out_ path_ = liftIO $ do
   writeFile (modName <.> "scala") $ told $ do
     TellChain.tellScalaSource modName libName chain
 
+generateTs :: Flag "n" '[] "N" "chain length" Int ->
+                 Flag "o" '[] "" "file to output" (Def "main.ts" String) ->
+                 Arg "FILENAME" String ->
+                 Cmd "generate random method chain in TypeScript" ()
+generateTs n_ out_ path_ = liftIO $ do
+  let n    = get n_
+  let out  = get out_
+  let path = get path_
+
+  src <- readFile path
+  let src' = SyntaxParser.eliminateComment src
+  syntax <- case SyntaxParser.parse SyntaxParser.parseSyntax path src' of
+    Left  err -> print err >> exitFailure
+    Right s   -> return s
+  chain <- Gen.genRandomChain syntax (\start -> Gen.gen start n)
+  let modName = dropExtension out
+  let libName = Syntax.syntaxName syntax
+  writeFile (modName <.> "ts") $ told $ do
+    TellChain.tellTsSource modName libName chain
+
 -------------------------------------------------------------------------------
 
 showHaskellLibName :: Arg "FILENAME" String ->
@@ -114,6 +134,17 @@ showScalaLibName path_ = liftIO $ do
     Right s   -> return s
   putStrLn (Syntax.syntaxName syntax)
 
+showTsLibName :: Arg "FILENAME" String ->
+                    Cmd "display library name (TypeScript version)" ()
+showTsLibName path_ = liftIO $ do
+  let path = get path_
+  src <- readFile path
+  let src' = SyntaxParser.eliminateComment src
+  syntax <- case SyntaxParser.parse SyntaxParser.parseSyntax path src' of
+    Left  err -> print err >> exitFailure
+    Right s   -> return s
+  putStrLn (Syntax.syntaxName syntax)
+
 -------------------------------------------------------------------------------
 
 main :: IO ()
@@ -121,8 +152,10 @@ main = run_ $ Group "experiment helper for typelevelLR"
   [subCmd "gen-haskell-chain"    generateHaskell,
    subCmd "gen-cpp-chain"        generateCpp,
    subCmd "gen-scala-chain"      generateScala,
+   subCmd "gen-ts-chain"      generateTs,
    subCmd "show-haskell-libname" showHaskellLibName,
    subCmd "show-cpp-libname"     showCppLibName,
-   subCmd "show-scala-libname"   showScalaLibName]
+   subCmd "show-scala-libname"   showScalaLibName,
+   subCmd "show-ts-libname"   showTsLibName]
 
 -------------------------------------------------------------------------------
