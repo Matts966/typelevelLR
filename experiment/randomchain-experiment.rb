@@ -91,6 +91,10 @@ class Experiment
           log("finish measurament ##{ i }: #{ t }")
           measuraments << t
           cleanup(setting)
+          puts "n, m, mean, variance"
+          results.each do |setting, ts|
+            puts "#{ setting[:n] }, #{ setting[:m] }, #{ mean(ts) }, #{ variance(ts) }"
+          end
         end
         results << [setting, measuraments]
         log("summary: #{ setting } => #{ measuraments }")
