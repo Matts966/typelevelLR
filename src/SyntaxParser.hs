@@ -20,7 +20,7 @@ ws' = () <$ many space
 ws :: (Stream s m Char) => ParsecT s u m ()
 ws = () <$ many1 space
 
-trySepBy :: (Stream s m c) => ParsecT s u m a -> ParsecT s u m sep -> ParsecT s u m [a]
+trySepBy :: (Stream s m c) =>ParsecT s u m a -> ParsecT s u m sep -> ParsecT s u m [a]
 trySepBy a sep = (:) <$> a <*> many (try (sep *> a))
 
 -------------------------------------------------------------------------------
@@ -56,8 +56,8 @@ parseRule = do
   return (Rule name lhs rhs)
 
 parseDerivation :: (Stream s m Char) => ParsecT s u m [Symbol]
-parseDerivation  =  [] <$ string "eps"
-                <|> trySepBy (ws' *> parseSymbol) (notFollowedBy (ws' *> parseIdentifier *> ws' *> (string ":")))
+parseDerivation  = trySepBy (ws' *> parseSymbol) (notFollowedBy (ws' *> parseIdentifier *> ws' *> (string ":")))
+                <|> [] <$ string "eps"
 
 parseSymbol :: (Stream s m Char) => ParsecT s u m Symbol
 parseSymbol  =  NonTerminalSymbol <$> try parseNonTerminal
