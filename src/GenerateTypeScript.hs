@@ -132,6 +132,7 @@ tellASTDefinitions = do
   forM_ (syntaxNonTerminals syntax) $ \nt -> do
     forM_ (syntaxRules syntax nt) $ \rule -> do
       let className = pascalCase (ruleName rule)
+      tellsLn $ ruleRhs rule
       tellsLn $ "\tvisit" ++ className ++ "(host : " ++ className ++ ") {"
       tellsLn $ "\t\tprocess.stdout.write(\"" ++ className ++ " (\")"
       forM_ (zip [1 ..] (concat $ ruleParams rule)) $ \(i, typ) -> do
