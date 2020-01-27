@@ -1,3 +1,3 @@
 import * as UnaryExpression from './UnaryExpression'
 
-UnaryExpression.beg
+UnaryExpression.begin().

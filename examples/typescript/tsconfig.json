@@ -1,7 +1,6 @@
 {
     "compilerOptions": {
         "types" : ["node"],
-        "incremental": true,
-        "strictFunctionTypes": true
+        "incremental": true
     }
 }

@@ -1,57 +1,46 @@
 syntax UnaryExpression (unaryExpression) {
-  CastExpression : castExpression -> unaryExpression
-  UnaryPostfixExpression : unaryExpression -> postfixExpression
-  UnaryPlusExpression : unaryExpression -> "plusPlus" unaryExpression
-  UnaryMinusExpression : unaryExpression -> "minusMinus" unaryExpression
-  UnaryOperatorCastExpression : unaryExpression -> unaryOperator castExpression
-  UnarySizeofExpression : unaryExpression -> "sizeof" unaryExpression
-  PostfixPrimaryExpression : postfixExpression -> primaryExpression
-  PostfixExpressions : postfixExpression -> postfixExpression expression
-  PostfixAssignmentExpressions : postfixExpression -> postfixExpression assignmentExpressions
-  PostfixDotExpressions : postfixExpression -> postfixExpression "dot" identifier
-  PostfixArrowExpressions : postfixExpression -> postfixExpression "arrow" identifier
-  PostfixPlusExpressions : postfixExpression -> postfixExpression "plusPlus"
-  PostfixMinusExpressions : postfixExpression -> postfixExpression "minusMinus"
-  AssignmentExpressions : assignmentExpressions -> assignmentExpression assignmentExpressions
-  EpsilonAssignmentExpressions : assignmentExpressions -> eps
-  PrimaryIdentifierExpression : primaryExpression -> identifier
-  PrimaryConstantExpression : primaryExpression -> constant
-  ConstantInteger : constant -> "integer(number)"
-  ConstantString : constant -> "character(string)"
-  ConstantFloat : constant -> "floating(number)"
-  ConstantEnum : constant -> enumerationConstant
-  ConditionalAssignmentExpression : assignmentExpression -> conditionalExpression
-  AssignmentExpression : assignmentExpression -> unaryExpression assignmentOperator assignmentExpression
-  AssignmentEqualOperator : assignmentOperator -> "euaql"
-  AssignmentMultiEqualOperator : assignmentOperator -> "multiEqual"
-  AssignmentDivEqualOperator : assignmentOperator -> "divEqual"
-  AssignmentPercentEqualOperator : assignmentOperator -> "percentEqual"
-  AssignmentPlusEqualOperator : assignmentOperator -> "plusEqual"
-  AssignmentMinuxEqualOperator : assignmentOperator -> "minusEqual"
-  AssignmentLeftShiftOperator : assignmentOperator -> "leftShiftEqual"
-  AssignmentRightShiftOperator : assignmentOperator -> "rifhtShiftEqual"
-  AssignmentAndEqualOperator : assignmentOperator -> "andEqual"
-  AssignmentXorEqualOperator : assignmentOperator -> "xorEqual"
-  AssignmentOrEqualOperator : assignmentOperator -> "orEqual"
-  UnaryAndOperator : unaryOperator -> "and"
-  UnaryMultiOperator : unaryOperator -> "multi"
-  UnaryPlusOperator : unaryOperator -> "plus"
-  UnaryMinusOperator : unaryOperator -> "minus"
-  UnaryComplementOperator : unaryOperator -> "complement"
-  UnaryNotOperator : unaryOperator -> "not"
-  ParameterList : parameterList -> parameterDeclaration
-  ParameterLists : parameterList -> parameterList parameterDeclaration
-  DeclaratorParameterDeclaration : parameterDeclaration -> declarationSpecifier declarationSpecifiers declarator
-  AbstractParameterDeclaration : parameterDeclaration -> declarationSpecifier declarationSpecifiers abstractDeclarator
-  ParameterDeclaration : parameterDeclaration -> declarationSpecifier declarationSpecifiers
-  AbstractPointerDeclarator : abstractDeclarator -> pointer
-  AbstractPointerDirectDeclarator : abstractDeclarator -> pointer directAbstractDeclarator
-  AbstractDirectDeclarator : abstractDeclarator -> directAbstractDeclarator
-  EnumIdentifierListSpecifier : enumSpecifier -> "enum" identifier enumeratorList
-  EnumListSpecifier : enumSpecifier -> "enum" enumeratorList
-  EnumIdentifierSpecifier : enumSpecifier -> "enum" identifier
-  EnumeratorList : enumeratorList -> enumerator
-  EnumeratorLists : enumeratorList -> enumeratorList enumerator
-  EnumeratorIdentifier : enumerator -> identifier
-  Identifier : identifier -> constantExpression
+  _UnaryPostfixExpression : unaryExpression -> postfixExpression
+  _UnaryPlusExpression : unaryExpression -> "plusPlus" unaryExpression
+  _UnaryMinusExpression : unaryExpression -> "minusMinus" unaryExpression
+  _UnaryOperatorCastExpression : unaryExpression -> unaryOperator castExpression
+  _UnaryCastExpression : castExpression -> unaryExpression
+  _UnarySizeofExpression : unaryExpression -> "sizeof" unaryExpression
+  _PostfixPrimaryExpression : postfixExpression -> primaryExpression
+  _PostfixAssignmentExpressions : postfixExpression -> postfixExpression assignmentExpressions
+  _PostfixDotExpressions : postfixExpression -> postfixExpression "dot" identifier
+  _PostfixArrowExpressions : postfixExpression -> postfixExpression "arrow" identifier
+  _PostfixPlusExpressions : postfixExpression -> postfixExpression "plusPlus"
+  _PostfixMinusExpressions : postfixExpression -> postfixExpression "minusMinus"
+  _AssignmentExpressions : assignmentExpressions -> assignmentExpression assignmentExpressions
+  _EpsilonAssignmentExpressions : assignmentExpressions -> eps
+  _PrimaryIdentifierExpression : primaryExpression -> identifier
+  _PrimaryConstantExpression : primaryExpression -> constant
+  _ConstantInteger : constant -> "integer(number)"
+  _ConstantString : constant -> "character(string)"
+  _ConstantFloat : constant -> "floating(number)"
+  _AssignmentExpression : assignmentExpression -> unaryExpression assignmentOperator assignmentExpression
+  _AssignmentEqualOperator : assignmentOperator -> "euaql"
+  _AssignmentMultiEqualOperator : assignmentOperator -> "multiEqual"
+  _AssignmentDivEqualOperator : assignmentOperator -> "divEqual"
+  _AssignmentPercentEqualOperator : assignmentOperator -> "percentEqual"
+  _AssignmentPlusEqualOperator : assignmentOperator -> "plusEqual"
+  _AssignmentMinuxEqualOperator : assignmentOperator -> "minusEqual"
+  _AssignmentLeftShiftOperator : assignmentOperator -> "leftShiftEqual"
+  _AssignmentRightShiftOperator : assignmentOperator -> "rifhtShiftEqual"
+  _AssignmentAndEqualOperator : assignmentOperator -> "andEqual"
+  _AssignmentXorEqualOperator : assignmentOperator -> "xorEqual"
+  _AssignmentOrEqualOperator : assignmentOperator -> "orEqual"
+  _UnaryAndOperator : unaryOperator -> "and"
+  _UnaryMultiOperator : unaryOperator -> "multi"
+  _UnaryPlusOperator : unaryOperator -> "plus"
+  _UnaryMinusOperator : unaryOperator -> "minus"
+  _UnaryComplementOperator : unaryOperator -> "complement"
+  _UnaryNotOperator : unaryOperator -> "not"
+  _EnumIdentifierListSpecifier : enumSpecifier -> "enum" identifier enumeratorList
+  _EnumListSpecifier : enumSpecifier -> "enum" enumeratorList
+  _EnumIdentifierSpecifier : enumSpecifier -> "enum" identifier
+  _EnumeratorList : enumeratorList -> enumerator
+  _EnumeratorLists : enumeratorList -> enumeratorList enumerator
+  _EnumeratorIdentifier : enumerator -> identifier
+  _Identifier : identifier -> "identifier(string)"
 }
