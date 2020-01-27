@@ -1,0 +1,134 @@
+syntax UnaryExpression (unaryExpression) {
+## <cast-expression> ::= <unary-expression>
+##   | ( <type-name> ) <cast-expression>
+  CastExpression : castExpression -> unaryExpression
+## CastExpressions : castExpression -> typeName castExpression
+
+## <unary-expression> ::= <postfix-expression>
+##   | ++ <unary-expression>
+##   | -- <unary-expression>
+##   | <unary-operator> <cast-expression>
+##   | sizeof <unary-expression>
+##   | sizeof <type-name>
+  UnaryPostfixExpression : unaryExpression -> postfixExpression
+  UnaryPlusExpression : unaryExpression -> "plusPlus" unaryExpression
+  UnaryMinusExpression : unaryExpression -> "minusMinus" unaryExpression
+  UnaryOperatorCastExpression : unaryExpression -> unaryOperator castExpression
+  UnarySizeofExpression : unaryExpression -> "sizeof" unaryExpression
+##  UnarySizeofTypeNameExpression : unaryExpression -> "sizeof" typeName
+
+## <postfix-expression> ::= <primary-expression>
+##   | <postfix-expression> [ <expression> ]
+##   | <postfix-expression> ( {<assignment-expression>}* )
+##   | <postfix-expression> . <identifier>
+##   | <postfix-expression> -> <identifier>
+##   | <postfix-expression> ++
+##   | <postfix-expression> --
+  PostfixPrimaryExpression : postfixExpression -> primaryExpression
+  PostfixExpressions : postfixExpression -> postfixExpression expression
+  PostfixAssignmentExpressions : postfixExpression -> postfixExpression assignmentExpressions
+  PostfixDotExpressions : postfixExpression -> postfixExpression "dot" identifier
+  PostfixArrowExpressions : postfixExpression -> postfixExpression "arrow" identifier
+  PostfixPlusExpressions : postfixExpression -> postfixExpression "plusPlus"
+  PostfixMinusExpressions : postfixExpression -> postfixExpression "minusMinus"
+  AssignmentExpressions : assignmentExpressions -> assignmentExpression assignmentExpressions
+  EpsilonAssignmentExpressions : assignmentExpressions -> eps
+
+## <primary-expression> ::= <identifier>
+##   | <constant>
+##   | <string>
+##   | ( <expression> )
+  PrimaryIdentifierExpression : primaryExpression -> identifier
+  PrimaryConstantExpression : primaryExpression -> constant
+## PrimaryStringExpression : primaryExpression -> string
+##  PrimaryExpression : primaryExpression -> expression
+
+## <constant> ::= <integer-constant>
+##   | <character-constant>
+##   | <floating-constant>
+##   | <enumeration-constant>
+  ConstantInteger : constant -> "integer(number)"
+  ConstantString : constant -> "character(string)"
+  ConstantFloat : constant -> "floating(number)"
+  ConstantEnum : constant -> enumerationConstant
+
+## <expression> ::= <assignment-expression>
+##   | <expression> , <assignment-expression>
+##  ExpressionAssignmentExpression : expression -> assignmentExpression
+##  ExpressionAssignmentExpressions : expression -> expression assignmentExpression
+
+## <assignment-expression> ::= <conditional-expression>
+##   | <unary-expression> <assignment-operator> <assignment-expression>
+  ConditionalAssignmentExpression : assignmentExpression -> conditionalExpression
+  AssignmentExpression : assignmentExpression -> unaryExpression assignmentOperator assignmentExpression
+
+## <assignment-operator> ::= =
+##   | *=
+##   | /=
+##   | %=
+##   | +=
+##   | -=
+##   | <<=
+##   | >>=
+##   | &=
+##   | ^=
+##   | |=
+  AssignmentEqualOperator : assignmentOperator -> "euaql"
+  AssignmentMultiEqualOperator : assignmentOperator -> "multiEqual"
+  AssignmentDivEqualOperator : assignmentOperator -> "divEqual"
+  AssignmentPercentEqualOperator : assignmentOperator -> "percentEqual"
+  AssignmentPlusEqualOperator : assignmentOperator -> "plusEqual"
+  AssignmentMinuxEqualOperator : assignmentOperator -> "minusEqual"
+  AssignmentLeftShiftOperator : assignmentOperator -> "leftShiftEqual"
+  AssignmentRightShiftOperator : assignmentOperator -> "rifhtShiftEqual"
+  AssignmentAndEqualOperator : assignmentOperator -> "andEqual"
+  AssignmentXorEqualOperator : assignmentOperator -> "xorEqual"
+  AssignmentOrEqualOperator : assignmentOperator -> "orEqual"
+
+## <unary-operator> ::= &
+##   | *
+##   | +
+##   | -
+##   | ~
+##   | !
+  UnaryAndOperator : unaryOperator -> "and"
+  UnaryMultiOperator : unaryOperator -> "multi"
+  UnaryPlusOperator : unaryOperator -> "plus"
+  UnaryMinusOperator : unaryOperator -> "minus"
+  UnaryComplementOperator : unaryOperator -> "complement"
+  UnaryNotOperator : unaryOperator -> "not"
+
+## <parameter-list> ::= <parameter-declaration>
+##   | <parameter-list> , <parameter-declaration>
+  ParameterList : parameterList -> parameterDeclaration
+  ParameterLists : parameterList -> parameterList parameterDeclaration
+
+## <parameter-declaration> ::= {<declaration-specifier>}+ <declarator>
+##   | {<declaration-specifier>}+ <abstract-declarator>
+##   | {<declaration-specifier>}+
+  DeclaratorParameterDeclaration : parameterDeclaration -> declarationSpecifier declarationSpecifiers declarator
+  AbstractParameterDeclaration : parameterDeclaration -> declarationSpecifier declarationSpecifiers abstractDeclarator
+  ParameterDeclaration : parameterDeclaration -> declarationSpecifier declarationSpecifiers
+
+## <abstract-declarator> ::= <pointer>
+##   | <pointer> <direct-abstract-declarator>
+##   | <direct-abstract-declarator>
+  AbstractPointerDeclarator : abstractDeclarator -> pointer
+  AbstractPointerDirectDeclarator : abstractDeclarator -> pointer directAbstractDeclarator
+  AbstractDirectDeclarator : abstractDeclarator -> directAbstractDeclarator
+
+## <enum-specifier> ::= enum <identifier> { <enumerator-list> }
+##   | enum { <enumerator-list> }
+##   | enum <identifier>
+## <enumerator-list> ::= <enumerator>
+##   | <enumerator-list> , <enumerator>
+## <enumerator> ::= <identifier>
+##    <identifier> = <constant-expression>
+  EnumIdentifierListSpecifier : enumSpecifier -> "enum" identifier enumeratorList
+  EnumListSpecifier : enumSpecifier -> "enum" enumeratorList
+  EnumIdentifierSpecifier : enumSpecifier -> "enum" identifier
+  EnumeratorList : enumeratorList -> enumerator
+  EnumeratorLists : enumeratorList -> enumeratorList enumerator
+  EnumeratorIdentifier : enumerator -> identifier
+  Identifier : identifier -> constantExpression
+}
