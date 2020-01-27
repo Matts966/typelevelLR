@@ -148,18 +148,15 @@ interface Visitor {
 
 export class DefaultVisitor implements Visitor {
 	visitSimpleHello(host : SimpleHello) {
-		process.stdout.write("SimpleHello (")
-		process.stdout.write(")")
+		process.stdout.write("hello")
 	}
 	visitHelloWithName(host : HelloWithName) {
-		process.stdout.write("HelloWithName (")
+		process.stdout.write("hello")
+		process.stdout.write(" ")
 		host.arg1.accept(this)
-		process.stdout.write(")")
 	}
 	visitNameString(host : NameString) {
-		process.stdout.write("NameString (")
 		process.stdout.write(""+host.arg1)
-		process.stdout.write(")")
 	}
 }
 
@@ -319,3 +316,4 @@ export function begin(): Fluent<[Node1]> {
 }
 
 ///////////////////////////////////////////////////////////////////////////////
+
