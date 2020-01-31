@@ -14,4 +14,4 @@ jobs:
       with:
         path: /workdir
         key: workdir
-    - run: docker run -w /workdir -v $(pwd):/workdir -it haskell:8.0.2 stack test
+    - run: docker run -w /workdir -v $(pwd):/workdir haskell:8.0.2 stack test
