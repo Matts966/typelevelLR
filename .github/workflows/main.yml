@@ -9,6 +9,8 @@ jobs:
       image: haskell:8.0.2
       volumes:
         - volume:/volume
+    env:
+      TAR_OPTIONS: --no-same-owner
     steps:
     - uses: actions/checkout@v2
     - name: cache
