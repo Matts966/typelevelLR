@@ -7,13 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     container: 
       image: haskell:8.0.2
-      volumes:
-        - volume:/volume
     steps:
     - uses: actions/checkout@v2
-    - name: cache
-      uses: actions/cache@v1.1.0
+    - uses: actions/cache@v1.1.0
       with:
-        path: /volume
-        key: volume
+        path: $(pwd)
+        key: cache
     - run: stack test --allow-different-user
