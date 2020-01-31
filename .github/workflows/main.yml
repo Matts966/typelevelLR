@@ -3,10 +3,20 @@ name: test
 on: [push]
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    container: 
-      image: haskell:8.0.2
+  build:
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        ghc: ["8.0.2"]
+        cabal: ["1.24"]
+
     steps:
-    - uses: actions/checkout@v2
-    - run: stack test
+    - uses: actions/checkout@v1
+    - name: setup
+      uses: actions/setup-haskell@v1
+      with:
+        ghc-version: ${{ matrix.ghc }}
+        cabal-version: ${{ matrix.cabal }}
+    - uses: mstksg/setup-stack@v1
+    - name: test
+      run: stack --system-ghc test
