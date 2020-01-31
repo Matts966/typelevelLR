@@ -8,4 +8,4 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: test
-      run: docker run -w /workdir -v $(pwd):/workdir haskell:8.0.2 stack test --allow-different-user
+      run: docker run -t -w /workdir -v $(pwd):/workdir haskell:8.0.2 stack test --allow-different-user
