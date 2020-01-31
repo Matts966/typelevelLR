@@ -9,8 +9,6 @@ jobs:
       image: haskell:8.0.2
       volumes:
         - volume:/volume
-    env:
-      TAR_OPTIONS: --no-same-owner
     steps:
     - uses: actions/checkout@v2
     - name: cache
@@ -18,4 +16,4 @@ jobs:
       with:
         path: /volume
         key: volume
-    - run: stack test
+    - run: stack test --allow-different-user
