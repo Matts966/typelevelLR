@@ -12,6 +12,6 @@ jobs:
     - name: Cache
       uses: actions/cache@v1.1.0
       with:
-        path: /workdir
+        path: $(pwd)
         key: workdir
-    - run: docker run -w /workdir -v $(pwd):/workdir haskell:8.0.2 stack test
+    - run: docker run -w $(pwd) -v $(pwd):$(pwd) haskell:8.0.2 stack test
