@@ -4,14 +4,16 @@ on: [push]
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
-
+    container: 
+      image: haskell:8.0.2
+      volumes:
+        - volume:/volume
     steps:
     - uses: actions/checkout@v2
-    - name: Cache
+    - name: cache
       uses: actions/cache@v1.1.0
       with:
-        path: $(pwd)
-        key: workdir
-    - run: docker run -w $(pwd) -v $(pwd):$(pwd) haskell:8.0.2 stack test
+        path: /volume
+        key: volume
+    - run: stack test
