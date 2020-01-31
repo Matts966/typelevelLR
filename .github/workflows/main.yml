@@ -1,4 +1,4 @@
-name: CI
+name: test
 
 on: [push]
 
@@ -9,8 +9,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: setup-docker
-      uses: docker-practice/actions-setup-docker@0.0.1
+    - uses: docker-practice/actions-setup-docker@0.0.1
       with:
         docker_version: 19.03
     - run: docker run -w /workdir -v $(pwd):/workdir -it haskell:8.0.2 stack test
