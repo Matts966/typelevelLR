@@ -9,6 +9,4 @@ jobs:
       image: haskell:8.0.2
     steps:
     - uses: actions/checkout@v2
-    - run: |
-        TAR_OPTIONS=--no-same-owner stack setup
-        stack test --allow-different-user
+    - run: stack test
