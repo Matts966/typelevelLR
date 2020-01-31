@@ -13,4 +13,6 @@ jobs:
       with:
         path: $(pwd)
         key: cache
-    - run: stack test --allow-different-user
+    - run: |
+        TAR_OPTIONS=--no-same-owner stack setup
+        stack test --allow-different-user
