@@ -1,7 +1,7 @@
 
 ## TypeLevelLR
 
-![test](https://github.com/csg-tokyo/typelevelLR/workflows/test/badge.svg)
+![test](https://github.com/Matts966/typelevelLR/workflows/test/badge.svg)
 
 - Fluent DSL Generator
 
