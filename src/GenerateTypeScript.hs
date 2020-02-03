@@ -161,21 +161,17 @@ tellAutomatonStates = do
   tellsLn $ intercalate " | " $ map (\(node, name, typ) -> name) nodes
   tellNewline
   forMWithSep_ tellNewline nodes $ \(node, name, typ) -> do
-    tellsLn $ "class " ++ name ++ " {"
-    tellsLn $ "\tprivate _" ++ name ++ "Brand: boolean = true"
+    tells $ "class " ++ name ++ " {"
+    let brand = "\tpublic _" ++ name ++ "Brand: boolean = true"
     params <- nodeParams_ node
     case params of
-      [] -> return ()
+      [] -> tells $ " " ++ brand + " "
       _  -> do
-        forM_ (zip [1 ..] params) $ \(i, param) -> do
-          tellsLn ("\targ" ++ show i ++ " : " ++ param)
+        tellsLn $ "\n" ++ brand
         tells ("\tconstructor(")
         forMWithSep_ (tells ", ") (zip [1 ..] params) $ \(i, param) -> do
-          tells ("arg" ++ show i ++ " : " ++ param)
-        tellsLn ") {"
-        forM_ (zip [1 ..] params) $ \(i, param) -> do
-          tellsLn ("\t\tthis.arg" ++ show i ++ " = " ++ "arg" ++ show i)
-        tellsLn "\t}"
+          tells ("public arg" ++ show i ++ " : " ++ param)
+        tellsLn ") {}"
     tellsLn "}"
 
 -------------------------------------------------------------------------------
