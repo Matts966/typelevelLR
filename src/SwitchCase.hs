@@ -59,7 +59,7 @@ alpha = lower <|> upper
 -------------------------------------------------------------------------------
 
 sep :: (Stream s m Char) => ParsecT s u m [String]
-sep = pure <$> many1 sepChar
+sep = pure <$> many sepChar
 
 number :: (Stream s m Char) => ParsecT s u m String
 number = digit <++> many (cmpl (sepChar <|> alpha))
@@ -99,7 +99,7 @@ word :: (Stream s m Char) => ParsecT s u m String
 word = number <|> lowerWord <|> try camelWord <|> upperWord <|> unknownWord
 
 splitIdentifier :: String -> [String]
-splitIdentifier = fromRight . parse words "splitIdentifier"
+splitIdentifier = filter \s -> s /= "" $ fromRight . parse words "splitIdentifier"
   where words = sep <++> word `trySepBy` sep <++> sep
 
 -------------------------------------------------------------------------------
