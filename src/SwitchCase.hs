@@ -59,7 +59,7 @@ alpha = lower <|> upper
 -------------------------------------------------------------------------------
 
 sep :: (Stream s m Char) => ParsecT s u m [String]
-sep = pure <$> many sepChar
+sep = pure <$> many1 sepChar
 
 number :: (Stream s m Char) => ParsecT s u m String
 number = digit <++> many (cmpl (sepChar <|> alpha))
