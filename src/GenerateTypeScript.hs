@@ -196,8 +196,8 @@ tellTransitions = do
       modify $ Set.insert [srcName]
   mapM tellTypeGuards $ Set.toList s
   -- fluent type
-  tellsLn "type Fluent<Stack extends unknown[]> = ("
-  forMWithSep_ (tellsLn ") & (") (lrTableTransitions table) $ \(src, t, action) -> case action of
+  tells "type Fluent<Stack extends unknown[]> = ("
+  forMWithSep_ (tells ")\n\t& (") (lrTableTransitions table) $ \(src, t, action) -> case action of
     Shift  dst  -> tellShiftFluentType  src t dst
     Reduce rule -> tellReduceFluentType src t rule
     Accept      -> tellAcceptFluentType src
@@ -288,7 +288,7 @@ tellReduceFluentType :: (MonadWriter (Endo String) m, MonadReader CodeGenerateEn
                      => LRNode -> Terminal -> Rule -> m ()
 tellReduceFluentType src t rule = do
   reduces <- reducesFrom_ src rule
-  forMWithSep_ (tellsLn ") & (") reduces $ \(srcPath, dstPath) -> do
+  forMWithSep_ (tells ") & (") reduces $ \(srcPath, dstPath) -> do
     dstName <- pascalCase <$> nodeName_ (head dstPath)
     condition <- do path <- mapM nodeName_ srcPath
                     return $ "[StartsWith<Stack, [" ++ intercalate ", " path ++ "]>]"
@@ -299,13 +299,13 @@ tellReduceFluentType src t rule = do
     let funName = terminalName t
     let params = terminalParams t
     let args = intercalate ", " ["arg" ++ show i ++ ": " ++ typ | (i, typ) <- zip [1 ..] params]
-    tellsLn "\t{"
-    tellsLn "\t\t0: {}"
-    tellsLn $ "\t\t1: " ++ dstType ++ "extends { " ++ funName ++ ": infer F }"
-    tellsLn $ "\t\t\t" ++ "? { " ++ funName ++ ": F }"
-    tellsLn "\t\t\t: {}"
-    tells "\t}"
-    tellsLn condition
+    tells "{"
+    tells " 0: {},"
+    tells $ " 1: " ++ dstType ++ "extends { " ++ funName ++ ": infer F }"
+    tells $ " ? { " ++ funName ++ ": F }"
+    tells " : {}"
+    tells "}"
+    tells condition
 
 tellShiftFluentType :: (MonadWriter (Endo String) m, MonadReader CodeGenerateEnv m)
                     => LRNode -> Terminal -> LRNode -> m ()
@@ -316,21 +316,21 @@ tellShiftFluentType src t dst = do
   let dstType = "Fluent<Prepend<" ++ dstName ++ ", Stack>>"
   let params = terminalParams t
   let args = intercalate ", " ["arg" ++ show i ++ ": " ++ typ | (i, typ) <- zip [1 ..] params]
-  tellsLn "\t{"
-  tellsLn "\t\t0: {}"
-  tellsLn $ "\t\t1: { " ++ funName ++ ": (" ++ args ++ ") => " ++ dstType ++ " }"
-  tells "\t}"
-  tellsLn $ "[StartsWith<Stack, [" ++ srcName ++ "]>]"
+  tells "{"
+  tells " 0: {},"
+  tells $ " 1: { " ++ funName ++ ": (" ++ args ++ ") => " ++ dstType ++ " }"
+  tells "}"
+  tells $ "[StartsWith<Stack, [" ++ srcName ++ "]>]"
 
 tellAcceptFluentType :: (MonadWriter (Endo String) m, MonadReader CodeGenerateEnv m)
                      => LRNode -> m ()
 tellAcceptFluentType src = do
   srcName <- nodeName_ src
-  tellsLn "\t{"
-  tellsLn "\t\t0: {}"
-  tellsLn $ "\t\t1: { end: () => " ++ srcName ++ "['arg1']" ++ " }"
-  tells "\t}"
-  tellsLn $ "[StartsWith<Stack, [" ++ srcName ++ "]>]"
+  tells "{"
+  tells " 0: {},"
+  tells $ " 1: { end: () => " ++ srcName ++ "['arg1']" ++ " }"
+  tells "}"
+  tells $ "[StartsWith<Stack, [" ++ srcName ++ "]>]"
 
 tellTypeGuards ::  (MonadWriter (Endo String) m, MonadReader CodeGenerateEnv m) => [String] -> m ()
 tellTypeGuards nodes = do
