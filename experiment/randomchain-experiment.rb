@@ -94,6 +94,12 @@ class Experiment
         end
         results << [setting, measuraments]
         log("summary: #{ setting } => #{ measuraments }")
+
+        puts "Process on the way..."
+        puts "n, m, mean, variance"
+        results.each do |setting, ts|
+          puts "#{ setting[:n] }, #{ setting[:m] }, #{ mean(ts) }, #{ variance(ts) }"
+        end
       end
       results
     end
@@ -121,14 +127,14 @@ class RandomChainExperiment < Experiment
   def setup
     syntaxfile = find_syntax_file
     runshell("typelevelLR --#{ lang }")
-    libname = runshell("./GenRandomChainCI show-#{ lang }-libname #{ syntaxfile }").strip
+    libname = runshell("GenRandomChainCI show-#{ lang }-libname #{ syntaxfile }").strip
     ns.each do |n|
       ms.each do |m|
         filename = "#{ main }_n#{ n }_m#{ m }#{ ext }"
         syntaxfile = find_syntax_file
         begin
           unless File.exists?(filename)
-            runshell("./GenRandomChainCI gen-#{ lang }-chain -n #{ n } -o #{ filename } #{ syntaxfile }")
+            runshell("GenRandomChainCI gen-#{ lang }-chain -n #{ n } -o #{ filename } #{ syntaxfile }")
           end
           setting = { n: n, m: m, filename: filename, syntaxfile: syntaxfile, libname: libname }
           yield setting
@@ -164,14 +170,12 @@ class RandomChainExperiment < Experiment
 
     syntaxfile = find_syntax_file
     runshell("cp #{ syntaxfile } #{ workspace_name }/")
-    unless File.exists?('./GenRandomChainCI')
-      raise RuntimeError, "file not found -- GenRandomChainCI"
-    end
-    runshell("cp GenRandomChainCI #{ workspace_name }/")
 
     workspace_name
   end
 end
+
+
 
 ###############################################################################
 
@@ -237,7 +241,7 @@ class CppRandomChainExperiment < RandomChainExperiment
   def target(setting)
     filename = setting[:filename]
     basename = File.basename(filename, '.cpp')
-    libname  = setting[:libname ]
+    libname  = setting[:libname]
     unless File.exists?("#{ libname }.o")
       compile("#{ libname }.cpp", ['-c'])
     end
@@ -256,6 +260,28 @@ class CppRandomChainExperiment < RandomChainExperiment
   end
 end
 
+class TsRandomChainExperiment < RandomChainExperiment
+  def lang
+    'ts'
+  end
+
+  def main
+    'main'
+  end
+
+  def ext
+    '.ts'
+  end
+
+  def target(setting)
+    filename = setting[:filename]
+    runshell("npx ts-node #{ filename }")
+  end
+
+  def cleanup(setting)
+  end
+end
+
 ###############################################################################
 
 opt = OptionParser.new
@@ -265,6 +291,7 @@ config = {}
 opt.on('--hs', '--haskell') { config[:haskell] = true }
 opt.on('--scala') { config[:scala] = true }
 opt.on('--cpp') { config[:cpp] = true }
+opt.on('--ts') { config[:ts] = true }
 opt.on('-v', '--verbouse') { $verbouse = true }
 opt.on('-n N', '--max-n N') { |n| config[:max_n] = n.to_i }
 opt.on('-m M', '--max-m M') { |n| config[:max_m] = n.to_i }
@@ -275,12 +302,12 @@ opt.parse!(ARGV)
 
 ###############################################################################
 
-case [config[:haskell], config[:scala], config[:cpp]].count(true)
+case [config[:haskell], config[:scala], config[:cpp], config[:ts]].count(true)
 when 0
-  raise RuntimeError, "non of --haskell nor --scala nor --cpp is passed"
+  raise RuntimeError, "non of --haskell nor --scala nor --cpp nor --ts is passed"
 when 1
 else
-  raise RuntimeError, "multiple options of --haskell and --scala and --cpp are passed"
+  raise RuntimeError, "multiple options of --haskell and --scala and --cpp and --ts are passed"
 end
 
 max_n = config[:max_n] || 200
@@ -292,6 +319,7 @@ ms = 1 .. max_m
 experiment = if config[:haskell]; HaskellRandomChainExperiment.new(ns, ms)
              elsif config[:scala]; ScalaRandomChainExperiment.new(ns, ms)
              elsif config[:cpp]; CppRandomChainExperiment.new(ns, ms)
+             elsif config[:ts]; TsRandomChainExperiment.new(ns, ms)
              end
 
 results = experiment.invoke

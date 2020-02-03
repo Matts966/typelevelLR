@@ -31,7 +31,7 @@ spec = describe "Utility" $ do
 fromLeftSpec :: Spec
 fromLeftSpec = describe "fromLeft" $ do
   it "fromLeft . Left == id" $ property $ \(x :: Int) -> do
-    fromLeft (Left x) `shouldBe` x
+    fromLeft (Left x :: Either Int Int) `shouldBe` x
 
   it "(fromLeft . Right) throws an error" $ property $ \(x :: Int) -> do
     fromLeft (Right x) `shouldThrow` (\(_ :: SomeException) -> True)
@@ -39,7 +39,7 @@ fromLeftSpec = describe "fromLeft" $ do
 fromRightSpec :: Spec
 fromRightSpec = describe "fromRight" $ do
   it "fromRight . Right == id" $ property $ \(x :: Int) -> do
-    fromRight (Right x) `shouldBe` x
+    fromRight (Right x :: Either Int Int) `shouldBe` x
 
   it "(fromRight . Left) throws an error" $ property $ \(x :: Int) -> do
     fromRight (Left x) `shouldThrow` (\(_ :: SomeException) -> True)
@@ -102,11 +102,11 @@ mapMWithSepSpec = describe "mapMWithSep" $ do
 splitIdentifierSpec :: Spec
 splitIdentifierSpec = describe "splitIdentifier" $ do
   it "works for camelCase" $ do
-    splitIdentifier "camelCase" `shouldBe` ["camel", "case"]
+    splitIdentifier "camelCase" `shouldBe` ["camel", "Case"]
     splitIdentifier "splitIdentifierSpec" `shouldBe` ["split", "identifier", "spec"]
 
   it "works for PascalCase" $ do
-    splitIdentifier "PascalCase" `shouldBe` ["pascal", "case"]
+    splitIdentifier "PascalCase" `shouldBe` ["Pascal", "Case"]
     splitIdentifier "MonadTrans" `shouldBe` ["monad", "trans"]
     splitIdentifier "Int" `shouldBe` ["int"]
 
@@ -121,6 +121,6 @@ splitIdentifierSpec = describe "splitIdentifier" $ do
 
   it "works for edge case" $ do
     splitIdentifier "" `shouldBe` []
-    splitIdentifier "ASTNode" `shouldBe` ["AST", "node"]
+    splitIdentifier "ASTNode" `shouldBe` ["AST", "Node"]
 
 -------------------------------------------------------------------------------

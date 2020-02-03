@@ -44,6 +44,10 @@ tellScalaChain :: (MonadWriter (Endo String) m, MonadState TellChainEnv m) =>
                   [S.Terminal] -> m ()
 tellScalaChain = tellChainWith tellScalaTerminal "."
 
+tellTsChain :: (MonadWriter (Endo String) m, MonadState TellChainEnv m) =>
+                  [S.Terminal] -> m ()
+tellTsChain = tellChainWith tellTsTerminal "."
+
 -------------------------------------------------------------------------------
 
 tellTerminalWith :: (MonadWriter (Endo String) m, MonadState TellChainEnv m) =>
@@ -67,6 +71,10 @@ tellCppTerminal = tellTerminalWith (\m -> tells "(" *> m *> tells ")") (tells ",
 tellScalaTerminal :: (MonadWriter (Endo String) m, MonadState TellChainEnv m) =>
                      S.Terminal -> m ()
 tellScalaTerminal = tellTerminalWith (\m -> tells "(" *> m *> tells ")") (tells ", ")
+
+tellTsTerminal :: (MonadWriter (Endo String) m, MonadState TellChainEnv m) =>
+                     S.Terminal -> m ()
+tellTsTerminal = tellTerminalWith (\m -> tells "(" *> m *> tells ")") (tells ", ")
 
 -------------------------------------------------------------------------------
 
@@ -94,6 +102,12 @@ scalaTellChainEnv = TellChainEnv $ Map.fromList $
   [("Int"    , map show [1 ..]),
    ("String" , map show strings),
    ("Boolean", cycle ["true", "false"])]
+
+tsTellChainEnv :: TellChainEnv
+tsTellChainEnv = TellChainEnv $ Map.fromList $
+  [("number"    , map show [1 ..]),
+   ("string" , map show strings),
+   ("boolean", cycle ["true", "false"])]
 
 -------------------------------------------------------------------------------
 
@@ -133,5 +147,13 @@ tellScalaSource modName libName chain = (`evalStateT` scalaTellChainEnv) $ do
   tellsLn  "    println(parseTree)"
   tellsLn  "  }"
   tellsLn  "}"
+
+tellTsSource :: (MonadWriter (Endo String) m) => String -> String -> [S.Terminal] -> m ()
+tellTsSource modName libName chain = (`evalStateT` tsTellChainEnv) $ do
+  tellsLn  ""
+  tellsLn $ "import * as " ++ (pascalCase libName) ++ " from \"./" ++ (pascalCase libName) ++ "\""
+  tells $ (pascalCase libName) ++ "."
+  tellTsChain chain
+  tellsLn  ".accept()"
 
 -------------------------------------------------------------------------------
