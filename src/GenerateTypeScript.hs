@@ -162,12 +162,12 @@ tellAutomatonStates = do
   tellNewline
   forMWithSep_ tellNewline nodes $ \(node, name, typ) -> do
     tells $ "class " ++ name ++ " {"
-    let brand = "\tpublic _" ++ name ++ "Brand: boolean = true"
+    let brand = "public _" ++ name ++ "Brand: boolean = true"
     params <- nodeParams_ node
     case params of
-      [] -> tells $ " " ++ brand + " "
+      [] -> tells $ " " ++ brand ++ " "
       _  -> do
-        tellsLn $ "\n" ++ brand
+        tellsLn $ "\n\t" ++ brand
         tells ("\tconstructor(")
         forMWithSep_ (tells ", ") (zip [1 ..] params) $ \(i, param) -> do
           tells ("public arg" ++ show i ++ " : " ++ param)

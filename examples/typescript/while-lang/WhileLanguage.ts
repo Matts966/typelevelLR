@@ -374,92 +374,102 @@ interface Visitor {
 
 export class DefaultVisitor implements Visitor {
 	visitAssign(host : Assign) {
-		process.stdout.write("Assign (")
 		process.stdout.write(""+host.arg1)
-		host.arg2.accept(this)
-		process.stdout.write(")")
+		process.stdout.write(" ")
+		process.stdout.write("assign")
+		process.stdout.write(" ")
+		host.arg1.accept(this)
 	}
 	visitSkip(host : Skip) {
-		process.stdout.write("Skip (")
-		process.stdout.write(")")
+		process.stdout.write("skip")
 	}
 	visitAndThen(host : AndThen) {
-		process.stdout.write("AndThen (")
 		host.arg1.accept(this)
+		process.stdout.write(" ")
+		process.stdout.write("andThen")
+		process.stdout.write(" ")
 		host.arg2.accept(this)
-		process.stdout.write(")")
 	}
 	visitIfThenElse(host : IfThenElse) {
-		process.stdout.write("IfThenElse (")
+		process.stdout.write("if_")
+		process.stdout.write(" ")
 		host.arg1.accept(this)
+		process.stdout.write(" ")
+		process.stdout.write("then_")
+		process.stdout.write(" ")
 		host.arg2.accept(this)
+		process.stdout.write(" ")
+		process.stdout.write("else_")
+		process.stdout.write(" ")
 		host.arg3.accept(this)
-		process.stdout.write(")")
 	}
 	visitWhile(host : While) {
-		process.stdout.write("While (")
+		process.stdout.write("while_")
+		process.stdout.write(" ")
 		host.arg1.accept(this)
+		process.stdout.write(" ")
+		process.stdout.write("do_")
+		process.stdout.write(" ")
 		host.arg2.accept(this)
-		process.stdout.write(")")
 	}
 	visitNumLit(host : NumLit) {
-		process.stdout.write("NumLit (")
 		process.stdout.write(""+host.arg1)
-		process.stdout.write(")")
 	}
 	visitVariable(host : Variable) {
-		process.stdout.write("Variable (")
 		process.stdout.write(""+host.arg1)
-		process.stdout.write(")")
 	}
 	visitBinPlus(host : BinPlus) {
-		process.stdout.write("BinPlus (")
 		host.arg1.accept(this)
+		process.stdout.write(" ")
+		process.stdout.write("plus")
+		process.stdout.write(" ")
 		host.arg2.accept(this)
-		process.stdout.write(")")
 	}
 	visitBinTimes(host : BinTimes) {
-		process.stdout.write("BinTimes (")
 		host.arg1.accept(this)
+		process.stdout.write(" ")
+		process.stdout.write("times")
+		process.stdout.write(" ")
 		host.arg2.accept(this)
-		process.stdout.write(")")
 	}
 	visitBinMinus(host : BinMinus) {
-		process.stdout.write("BinMinus (")
 		host.arg1.accept(this)
+		process.stdout.write(" ")
+		process.stdout.write("minus")
+		process.stdout.write(" ")
 		host.arg2.accept(this)
-		process.stdout.write(")")
 	}
 	visitTrueLit(host : TrueLit) {
-		process.stdout.write("TrueLit (")
-		process.stdout.write(")")
+		process.stdout.write("true_")
 	}
 	visitFalseLit(host : FalseLit) {
-		process.stdout.write("FalseLit (")
-		process.stdout.write(")")
+		process.stdout.write("false_")
 	}
 	visitBinEQ(host : BinEQ) {
-		process.stdout.write("BinEQ (")
 		host.arg1.accept(this)
+		process.stdout.write(" ")
+		process.stdout.write("eq")
+		process.stdout.write(" ")
 		host.arg2.accept(this)
-		process.stdout.write(")")
 	}
 	visitBinLE(host : BinLE) {
-		process.stdout.write("BinLE (")
 		host.arg1.accept(this)
+		process.stdout.write(" ")
+		process.stdout.write("le")
+		process.stdout.write(" ")
 		host.arg2.accept(this)
-		process.stdout.write(")")
 	}
 	visitBoolNot(host : BoolNot) {
-		process.stdout.write("BoolNot (")
+		process.stdout.write("not_")
+		process.stdout.write(" ")
 		host.arg1.accept(this)
-		process.stdout.write(")")
 	}
 	visitBoolAnd(host : BoolAnd) {
-		process.stdout.write("BoolAnd (")
 		host.arg1.accept(this)
+		process.stdout.write(" ")
+		process.stdout.write("and_")
+		process.stdout.write(" ")
 		host.arg2.accept(this)
-		process.stdout.write(")")
 	}
 }
 
@@ -469,228 +479,135 @@ export class DefaultVisitor implements Visitor {
 
 type Node = Node1 | Node2 | Node3 | Node4 | Node5 | Node6 | Node7 | Node8 | Node9 | Node10 | Node11 | Node12 | Node13 | Node14 | Node15 | Node16 | Node17 | Node18 | Node19 | Node20 | Node21 | Node22 | Node23 | Node24 | Node25 | Node26 | Node27 | Node28 | Node29 | Node30 | Node31 | Node32 | Node33 | Node34 | Node35 | Node36 | Node37
 
-class Node1 {
-	private _Node1Brand: boolean = true
-}
+class Node1 { public _Node1Brand: boolean = true }
 
 class Node2 {
-	private _Node2Brand: boolean = true
-	arg1 : S
-	constructor(arg1 : S) {
-		this.arg1 = arg1
-	}
+	public _Node2Brand: boolean = true
+	constructor(public arg1 : S) {}
 }
 
 class Node3 {
-	private _Node3Brand: boolean = true
-	arg1 : S
-	constructor(arg1 : S) {
-		this.arg1 = arg1
-	}
+	public _Node3Brand: boolean = true
+	constructor(public arg1 : S) {}
 }
 
-class Node4 {
-	private _Node4Brand: boolean = true
-}
+class Node4 { public _Node4Brand: boolean = true }
 
-class Node5 {
-	private _Node5Brand: boolean = true
-}
+class Node5 { public _Node5Brand: boolean = true }
 
-class Node6 {
-	private _Node6Brand: boolean = true
-}
+class Node6 { public _Node6Brand: boolean = true }
 
-class Node7 {
-	private _Node7Brand: boolean = true
-}
+class Node7 { public _Node7Brand: boolean = true }
 
 class Node8 {
-	private _Node8Brand: boolean = true
-	arg1 : S
-	constructor(arg1 : S) {
-		this.arg1 = arg1
-	}
+	public _Node8Brand: boolean = true
+	constructor(public arg1 : S) {}
 }
 
 class Node9 {
-	private _Node9Brand: boolean = true
-	arg1 : S
-	constructor(arg1 : S) {
-		this.arg1 = arg1
-	}
+	public _Node9Brand: boolean = true
+	constructor(public arg1 : S) {}
 }
 
 class Node10 {
-	private _Node10Brand: boolean = true
-	arg1 : S
-	constructor(arg1 : S) {
-		this.arg1 = arg1
-	}
+	public _Node10Brand: boolean = true
+	constructor(public arg1 : S) {}
 }
 
 class Node11 {
-	private _Node11Brand: boolean = true
-	arg1 : A
-	constructor(arg1 : A) {
-		this.arg1 = arg1
-	}
+	public _Node11Brand: boolean = true
+	constructor(public arg1 : A) {}
 }
 
-class Node12 {
-	private _Node12Brand: boolean = true
-}
+class Node12 { public _Node12Brand: boolean = true }
 
 class Node13 {
-	private _Node13Brand: boolean = true
-	arg1 : string
-	constructor(arg1 : string) {
-		this.arg1 = arg1
-	}
+	public _Node13Brand: boolean = true
+	constructor(public arg1 : string) {}
 }
 
 class Node14 {
-	private _Node14Brand: boolean = true
-	arg1 : A
-	constructor(arg1 : A) {
-		this.arg1 = arg1
-	}
+	public _Node14Brand: boolean = true
+	constructor(public arg1 : A) {}
 }
 
-class Node15 {
-	private _Node15Brand: boolean = true
-}
+class Node15 { public _Node15Brand: boolean = true }
 
-class Node16 {
-	private _Node16Brand: boolean = true
-}
+class Node16 { public _Node16Brand: boolean = true }
 
-class Node17 {
-	private _Node17Brand: boolean = true
-}
+class Node17 { public _Node17Brand: boolean = true }
 
-class Node18 {
-	private _Node18Brand: boolean = true
-}
+class Node18 { public _Node18Brand: boolean = true }
 
-class Node19 {
-	private _Node19Brand: boolean = true
-}
+class Node19 { public _Node19Brand: boolean = true }
 
 class Node20 {
-	private _Node20Brand: boolean = true
-	arg1 : A
-	constructor(arg1 : A) {
-		this.arg1 = arg1
-	}
+	public _Node20Brand: boolean = true
+	constructor(public arg1 : A) {}
 }
 
 class Node21 {
-	private _Node21Brand: boolean = true
-	arg1 : A
-	constructor(arg1 : A) {
-		this.arg1 = arg1
-	}
+	public _Node21Brand: boolean = true
+	constructor(public arg1 : A) {}
 }
 
-class Node22 {
-	private _Node22Brand: boolean = true
-}
+class Node22 { public _Node22Brand: boolean = true }
 
 class Node23 {
-	private _Node23Brand: boolean = true
-	arg1 : A
-	constructor(arg1 : A) {
-		this.arg1 = arg1
-	}
+	public _Node23Brand: boolean = true
+	constructor(public arg1 : A) {}
 }
 
-class Node24 {
-	private _Node24Brand: boolean = true
-}
+class Node24 { public _Node24Brand: boolean = true }
 
-class Node25 {
-	private _Node25Brand: boolean = true
-}
+class Node25 { public _Node25Brand: boolean = true }
 
-class Node26 {
-	private _Node26Brand: boolean = true
-}
+class Node26 { public _Node26Brand: boolean = true }
 
 class Node27 {
-	private _Node27Brand: boolean = true
-	arg1 : A
-	constructor(arg1 : A) {
-		this.arg1 = arg1
-	}
+	public _Node27Brand: boolean = true
+	constructor(public arg1 : A) {}
 }
 
 class Node28 {
-	private _Node28Brand: boolean = true
-	arg1 : A
-	constructor(arg1 : A) {
-		this.arg1 = arg1
-	}
+	public _Node28Brand: boolean = true
+	constructor(public arg1 : A) {}
 }
 
 class Node29 {
-	private _Node29Brand: boolean = true
-	arg1 : B
-	constructor(arg1 : B) {
-		this.arg1 = arg1
-	}
+	public _Node29Brand: boolean = true
+	constructor(public arg1 : B) {}
 }
 
 class Node30 {
-	private _Node30Brand: boolean = true
-	arg1 : B
-	constructor(arg1 : B) {
-		this.arg1 = arg1
-	}
+	public _Node30Brand: boolean = true
+	constructor(public arg1 : B) {}
 }
 
 class Node31 {
-	private _Node31Brand: boolean = true
-	arg1 : B
-	constructor(arg1 : B) {
-		this.arg1 = arg1
-	}
+	public _Node31Brand: boolean = true
+	constructor(public arg1 : B) {}
 }
 
 class Node32 {
-	private _Node32Brand: boolean = true
-	arg1 : B
-	constructor(arg1 : B) {
-		this.arg1 = arg1
-	}
+	public _Node32Brand: boolean = true
+	constructor(public arg1 : B) {}
 }
 
-class Node33 {
-	private _Node33Brand: boolean = true
-}
+class Node33 { public _Node33Brand: boolean = true }
 
 class Node34 {
-	private _Node34Brand: boolean = true
-	arg1 : number
-	constructor(arg1 : number) {
-		this.arg1 = arg1
-	}
+	public _Node34Brand: boolean = true
+	constructor(public arg1 : number) {}
 }
 
-class Node35 {
-	private _Node35Brand: boolean = true
-}
+class Node35 { public _Node35Brand: boolean = true }
 
-class Node36 {
-	private _Node36Brand: boolean = true
-}
+class Node36 { public _Node36Brand: boolean = true }
 
 class Node37 {
-	private _Node37Brand: boolean = true
-	arg1 : string
-	constructor(arg1 : string) {
-		this.arg1 = arg1
-	}
+	public _Node37Brand: boolean = true
+	constructor(public arg1 : string) {}
 }
 
 ///////////////////////////////////////////////////////////////////////////////
