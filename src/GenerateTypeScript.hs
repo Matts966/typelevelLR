@@ -248,10 +248,6 @@ getReduceFluentImplList t rule (srcPath, dstPath) = do
         (j, s) <- modify (\(c, ss) -> (c + 1, ss)) >> get
         put $ (j, s ++ "\t\t\tconst x" ++ show j ++ " = this.stack[" ++ show (length (ruleRhs rule) - i) ++ "].arg" ++ show k ++ "\n")
   let content = "\t\t\tconst content = new " ++ (pascalCase $ ruleName rule) ++ "(" ++ intercalate ", " ["x" ++ show i | i <- [1 .. n]] ++ ")\n"
-
-  -- let xs = concat ["\t\t\tconst x" ++ show i ++ " = this.stack[" ++ show (i-1) ++ "].arg" ++ show i ++ "\n" | (i, _) <- zip [1 ..] params]
-  -- let content = "\t\t\tconst content = new " ++ className ++ "(" ++ intercalate ", " ["x" ++ show i | i <- [1 .. 1]] ++ ")\n"
-
   let tail = "\t\t\tconst tail = this.stack.slice(" ++ show (length srcPath - 1) ++ ")\n"
   return (funName, "\t\tif (" ++
     typeguard ++ "(this.stack)) {\n" ++ xs ++
@@ -280,7 +276,6 @@ getAcceptFluentImplList src = do
   return ("end", "\t\tif (startsWith" ++
     srcName ++ "(this.stack)) {\n" ++
     "\t\t\treturn this.stack[0].arg1\n" ++ "\t\t}")
-
 
 tellReduceFluentType :: (MonadWriter (Endo String) m, MonadReader CodeGenerateEnv m)
                      => LRNode -> Terminal -> Rule -> m ()
@@ -334,9 +329,9 @@ tellTypeGuards ::  (MonadWriter (Endo String) m, MonadReader CodeGenerateEnv m) 
 tellTypeGuards nodes = do
   tellsLn $ "function startsWith" ++ (concat nodes) ++ "(arg: any): arg is AddUnknownNodeRest<[" ++ (intercalate ", " nodes) ++ "]> {"
   tells "\treturn "
-  forMWithSep_ (tells "\t\t&& ") (zip [0 ..] nodes) $ \(i, node) -> do
-    tellsLn $ "arg[" ++ show i ++ "] && arg[" ++ show i ++ "]._" ++ node ++ "Brand"
-  tellsLn "}"
+  forMWithSep_ (tells " && ") (zip [0 ..] nodes) $ \(i, node) -> do
+    tells $ "arg[" ++ show i ++ "] && arg[" ++ show i ++ "]._" ++ node ++ "Brand"
+  tellsLn "\n}"
   tellNewline
 
 -------------------------------------------------------------------------------
