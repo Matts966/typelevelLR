@@ -378,7 +378,7 @@ export class DefaultVisitor implements Visitor {
 		process.stdout.write(" ")
 		process.stdout.write("assign")
 		process.stdout.write(" ")
-		host.arg1.accept(this)
+		host.arg2.accept(this)
 	}
 	visitSkip(host : Skip) {
 		process.stdout.write("skip")

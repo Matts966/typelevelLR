@@ -133,17 +133,15 @@ tellASTDefinitions = do
     forM_ (syntaxRules syntax nt) $ \rule -> do
       let className = pascalCase (ruleName rule)
       tellsLn $ "\tvisit" ++ className ++ "(host : " ++ className ++ ") {"
-
-
       _ <- (`execStateT` 0) $ forMWithSep_ (tellsLn $ "\t\tprocess.stdout.write(\" \")") (zip [1 ..] (ruleRhs rule)) $ \(i, sym) -> case sym of
         NonTerminalSymbol nt -> do
           j <- modify (\c -> c + 1) >> get
           tellsLn $ "\t\thost.arg" ++ show j ++ ".accept(this)"
-
         TerminalSymbol t -> do
           if 0 < (length $ terminalParams t)
           then
             forMWithSep_ (tellsLn $ "\t\tprocess.stdout.write(\" \")") (zip [1 ..] (terminalParams t)) $ \(k, param) -> do
+              modify (\c -> c + 1)
               tellsLn $ "\t\tprocess.stdout.write(\"\"+host.arg" ++ show k ++ ")"
           else
             tellsLn $ "\t\tprocess.stdout.write(\"" ++ (terminalName t) ++ "\")" 
