@@ -206,21 +206,21 @@ tellTransitions = do
   tellsLn "\tstack: Node[] = [new Node1]"
   --let allFluentImpl = mapM getFluentImpl $ lrTableTransitions table
 
-  allFluentImpl <- mapM getFluentImpl $ lrTableTransitions table
-  let funNameBodyPair = Map.toAscList $ Map.fromListWith (++) $ concat allFluentImpl
-
+  fluentImplList <- mapM getReduceAndAcceptFluentImpl $ lrTableTransitions table
+  let fluentImplMap = Map.fromListWith (++) $ concat $ fluentImplList
+  shiftFluentImplList <- mapM getShiftFluentImpl $ lrTableTransitions table
+  let shiftFluentImplMap =  Map.fromList $ concat $ shiftFluentImplList
+  let funNameBodyPair = Map.toAscList $ Map.unionWith (++) fluentImplMap shiftFluentImplMap
   forM_ funNameBodyPair $ \(funName, impl) -> do
     tellsLn $ "\t" ++ funName ++ " = (...a: any[]) => {"
-    tellsLn impl
-    tellsLn $ "\t}"
-  tellsLn $ "}"
+    tells impl
+    tellsLn "\t}"
+  tellsLn "}"
 
-getFluentImpl :: (MonadReader CodeGenerateEnv m)
+getReduceAndAcceptFluentImpl :: (MonadReader CodeGenerateEnv m)
   => (LRNode, Terminal, LRAction) -> m [(String, String)]
-getFluentImpl (src, t, action) = case action of
-  Shift  dst  -> do
-    shifth <- getShiftFluentImplList src t dst
-    return [shifth]
+getReduceAndAcceptFluentImpl (src, t, action) = case action of
+  Shift  dst  -> return []
   Reduce rule -> do
     reduces <- reducesFrom_ src rule
     reduceh <- mapM (getReduceFluentImplList t rule) $ reduces
@@ -228,6 +228,32 @@ getFluentImpl (src, t, action) = case action of
   Accept      -> do
     accepth <- getAcceptFluentImplList src
     return [accepth]
+
+getShiftFluentImpl :: (MonadReader CodeGenerateEnv m)
+  => (LRNode, Terminal, LRAction) -> m [(String, String)]
+getShiftFluentImpl (src, t, action) = case action of
+  Shift  dst  -> do
+    sfl <- getShiftFluentImplList src t dst
+    return [sfl]
+  _           -> return []
+
+-- Add shift transition later to merge each of them
+-- addShiftTransition :: (MonadReader CodeGenerateEnv m)
+--   => Map String String -> (LRNode, Terminal, LRAction) -> m Map String String
+-- addShiftTransition (src, t, action) M = case action of
+--   Shift dst -> Map.insertWith
+--   _         -> return M
+
+getShiftFluentImplList :: (MonadReader CodeGenerateEnv m)
+  => LRNode -> Terminal -> LRNode -> m (String, String)
+getShiftFluentImplList src t dst = do
+  srcName <- pascalCase <$> nodeName_ src
+  dstName <- pascalCase <$> nodeName_ dst
+  let params = terminalParams t
+  let args = intercalate ", " ["a[" ++ show i ++ "] as " ++ typ | (i, typ) <- zip [0 ..] params]
+  return (terminalName t, "\t\tthis.stack = [new " ++ dstName ++
+    "(" ++ args ++ "), ...this.stack]\n" ++
+    "\t\treturn this\n")
 
 getReduceFluentImplList :: (MonadReader CodeGenerateEnv m)
   => Terminal -> Rule -> ([LRNode], [LRNode]) -> m (String, String)
@@ -255,19 +281,6 @@ getReduceFluentImplList t rule (srcPath, dstPath) = do
     "\t\t\tthis.stack = [new " ++ dstName ++
     "(content), ...tail]\n" ++
     "\t\t\treturn this." ++ funName ++ "()\n" ++ "\t\t}\n")
-
-getShiftFluentImplList :: (MonadReader CodeGenerateEnv m)
-  => LRNode -> Terminal -> LRNode -> m (String, String)
-getShiftFluentImplList src t dst = do
-  srcName <- pascalCase <$> nodeName_ src
-  dstName <- pascalCase <$> nodeName_ dst
-  let params = terminalParams t
-  let args = intercalate ", " ["a[" ++ show i ++ "] as " ++ typ | (i, typ) <- zip [0 ..] params]
-  return (terminalName t, "\t\tif (startsWith" ++
-    (srcName) ++ "(this.stack)) {\n" ++
-    "\t\t\tthis.stack = [new " ++ dstName ++
-    "(" ++ args ++ "), ...this.stack]\n" ++
-    "\t\t\treturn this\n" ++ "\t\t}")
 
 getAcceptFluentImplList :: (MonadReader CodeGenerateEnv m)
   => LRNode -> m (String, String)
