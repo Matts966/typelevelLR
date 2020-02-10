@@ -1,0 +1,7 @@
+# Ignore everything
+**
+
+# Allow files related to stack
+!/stack.yaml
+!/stack.yaml.lock
+!/typelevelLR.cabal
