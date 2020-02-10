@@ -11,4 +11,4 @@ fi
 echo "building typelevelLR..."
 stack install && mkdir -p bin  && cp $(which typelevelLR) ./bin/
 /bin/bash
-cp (which typelevelLR) ./bin/typelevelLR
+cp $(which typelevelLR) /workdir/bin/typelevelLR

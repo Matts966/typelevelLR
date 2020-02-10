@@ -1,0 +1,11 @@
+name: measure
+
+on: [push]
+
+jobs:
+    measure:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v1
+    - name: measure
+      run: stack install && cd experiment && ruby randomchain-experiment.rb --ts -v -n 300 -m 10 --num-warmup 0 --num-measure 1
