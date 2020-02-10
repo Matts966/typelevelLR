@@ -623,43 +623,23 @@ function startsWithNode10(arg: any): arg is AddUnknownNodeRest<[Node10]> {
 }
 
 function startsWithNode10Node7Node30Node16Node1(arg: any): arg is AddUnknownNodeRest<[Node10, Node7, Node30, Node16, Node1]> {
-	return arg[0] && arg[0]._Node10Brand
-		&& arg[1] && arg[1]._Node7Brand
-		&& arg[2] && arg[2]._Node30Brand
-		&& arg[3] && arg[3]._Node16Brand
-		&& arg[4] && arg[4]._Node1Brand
+	return arg[0] && arg[0]._Node10Brand && arg[1] && arg[1]._Node7Brand && arg[2] && arg[2]._Node30Brand && arg[3] && arg[3]._Node16Brand && arg[4] && arg[4]._Node1Brand
 }
 
 function startsWithNode10Node7Node30Node16Node4(arg: any): arg is AddUnknownNodeRest<[Node10, Node7, Node30, Node16, Node4]> {
-	return arg[0] && arg[0]._Node10Brand
-		&& arg[1] && arg[1]._Node7Brand
-		&& arg[2] && arg[2]._Node30Brand
-		&& arg[3] && arg[3]._Node16Brand
-		&& arg[4] && arg[4]._Node4Brand
+	return arg[0] && arg[0]._Node10Brand && arg[1] && arg[1]._Node7Brand && arg[2] && arg[2]._Node30Brand && arg[3] && arg[3]._Node16Brand && arg[4] && arg[4]._Node4Brand
 }
 
 function startsWithNode10Node7Node30Node16Node5(arg: any): arg is AddUnknownNodeRest<[Node10, Node7, Node30, Node16, Node5]> {
-	return arg[0] && arg[0]._Node10Brand
-		&& arg[1] && arg[1]._Node7Brand
-		&& arg[2] && arg[2]._Node30Brand
-		&& arg[3] && arg[3]._Node16Brand
-		&& arg[4] && arg[4]._Node5Brand
+	return arg[0] && arg[0]._Node10Brand && arg[1] && arg[1]._Node7Brand && arg[2] && arg[2]._Node30Brand && arg[3] && arg[3]._Node16Brand && arg[4] && arg[4]._Node5Brand
 }
 
 function startsWithNode10Node7Node30Node16Node6(arg: any): arg is AddUnknownNodeRest<[Node10, Node7, Node30, Node16, Node6]> {
-	return arg[0] && arg[0]._Node10Brand
-		&& arg[1] && arg[1]._Node7Brand
-		&& arg[2] && arg[2]._Node30Brand
-		&& arg[3] && arg[3]._Node16Brand
-		&& arg[4] && arg[4]._Node6Brand
+	return arg[0] && arg[0]._Node10Brand && arg[1] && arg[1]._Node7Brand && arg[2] && arg[2]._Node30Brand && arg[3] && arg[3]._Node16Brand && arg[4] && arg[4]._Node6Brand
 }
 
 function startsWithNode10Node7Node30Node16Node7(arg: any): arg is AddUnknownNodeRest<[Node10, Node7, Node30, Node16, Node7]> {
-	return arg[0] && arg[0]._Node10Brand
-		&& arg[1] && arg[1]._Node7Brand
-		&& arg[2] && arg[2]._Node30Brand
-		&& arg[3] && arg[3]._Node16Brand
-		&& arg[4] && arg[4]._Node7Brand
+	return arg[0] && arg[0]._Node10Brand && arg[1] && arg[1]._Node7Brand && arg[2] && arg[2]._Node30Brand && arg[3] && arg[3]._Node16Brand && arg[4] && arg[4]._Node7Brand
 }
 
 function startsWithNode11(arg: any): arg is AddUnknownNodeRest<[Node11]> {
@@ -667,38 +647,23 @@ function startsWithNode11(arg: any): arg is AddUnknownNodeRest<[Node11]> {
 }
 
 function startsWithNode11Node12Node13Node1(arg: any): arg is AddUnknownNodeRest<[Node11, Node12, Node13, Node1]> {
-	return arg[0] && arg[0]._Node11Brand
-		&& arg[1] && arg[1]._Node12Brand
-		&& arg[2] && arg[2]._Node13Brand
-		&& arg[3] && arg[3]._Node1Brand
+	return arg[0] && arg[0]._Node11Brand && arg[1] && arg[1]._Node12Brand && arg[2] && arg[2]._Node13Brand && arg[3] && arg[3]._Node1Brand
 }
 
 function startsWithNode11Node12Node13Node4(arg: any): arg is AddUnknownNodeRest<[Node11, Node12, Node13, Node4]> {
-	return arg[0] && arg[0]._Node11Brand
-		&& arg[1] && arg[1]._Node12Brand
-		&& arg[2] && arg[2]._Node13Brand
-		&& arg[3] && arg[3]._Node4Brand
+	return arg[0] && arg[0]._Node11Brand && arg[1] && arg[1]._Node12Brand && arg[2] && arg[2]._Node13Brand && arg[3] && arg[3]._Node4Brand
 }
 
 function startsWithNode11Node12Node13Node5(arg: any): arg is AddUnknownNodeRest<[Node11, Node12, Node13, Node5]> {
-	return arg[0] && arg[0]._Node11Brand
-		&& arg[1] && arg[1]._Node12Brand
-		&& arg[2] && arg[2]._Node13Brand
-		&& arg[3] && arg[3]._Node5Brand
+	return arg[0] && arg[0]._Node11Brand && arg[1] && arg[1]._Node12Brand && arg[2] && arg[2]._Node13Brand && arg[3] && arg[3]._Node5Brand
 }
 
 function startsWithNode11Node12Node13Node6(arg: any): arg is AddUnknownNodeRest<[Node11, Node12, Node13, Node6]> {
-	return arg[0] && arg[0]._Node11Brand
-		&& arg[1] && arg[1]._Node12Brand
-		&& arg[2] && arg[2]._Node13Brand
-		&& arg[3] && arg[3]._Node6Brand
+	return arg[0] && arg[0]._Node11Brand && arg[1] && arg[1]._Node12Brand && arg[2] && arg[2]._Node13Brand && arg[3] && arg[3]._Node6Brand
 }
 
 function startsWithNode11Node12Node13Node7(arg: any): arg is AddUnknownNodeRest<[Node11, Node12, Node13, Node7]> {
-	return arg[0] && arg[0]._Node11Brand
-		&& arg[1] && arg[1]._Node12Brand
-		&& arg[2] && arg[2]._Node13Brand
-		&& arg[3] && arg[3]._Node7Brand
+	return arg[0] && arg[0]._Node11Brand && arg[1] && arg[1]._Node12Brand && arg[2] && arg[2]._Node13Brand && arg[3] && arg[3]._Node7Brand
 }
 
 function startsWithNode12(arg: any): arg is AddUnknownNodeRest<[Node12]> {
@@ -714,31 +679,19 @@ function startsWithNode14(arg: any): arg is AddUnknownNodeRest<[Node14]> {
 }
 
 function startsWithNode14Node15Node20Node16(arg: any): arg is AddUnknownNodeRest<[Node14, Node15, Node20, Node16]> {
-	return arg[0] && arg[0]._Node14Brand
-		&& arg[1] && arg[1]._Node15Brand
-		&& arg[2] && arg[2]._Node20Brand
-		&& arg[3] && arg[3]._Node16Brand
+	return arg[0] && arg[0]._Node14Brand && arg[1] && arg[1]._Node15Brand && arg[2] && arg[2]._Node20Brand && arg[3] && arg[3]._Node16Brand
 }
 
 function startsWithNode14Node15Node20Node17(arg: any): arg is AddUnknownNodeRest<[Node14, Node15, Node20, Node17]> {
-	return arg[0] && arg[0]._Node14Brand
-		&& arg[1] && arg[1]._Node15Brand
-		&& arg[2] && arg[2]._Node20Brand
-		&& arg[3] && arg[3]._Node17Brand
+	return arg[0] && arg[0]._Node14Brand && arg[1] && arg[1]._Node15Brand && arg[2] && arg[2]._Node20Brand && arg[3] && arg[3]._Node17Brand
 }
 
 function startsWithNode14Node15Node20Node18(arg: any): arg is AddUnknownNodeRest<[Node14, Node15, Node20, Node18]> {
-	return arg[0] && arg[0]._Node14Brand
-		&& arg[1] && arg[1]._Node15Brand
-		&& arg[2] && arg[2]._Node20Brand
-		&& arg[3] && arg[3]._Node18Brand
+	return arg[0] && arg[0]._Node14Brand && arg[1] && arg[1]._Node15Brand && arg[2] && arg[2]._Node20Brand && arg[3] && arg[3]._Node18Brand
 }
 
 function startsWithNode14Node15Node20Node19(arg: any): arg is AddUnknownNodeRest<[Node14, Node15, Node20, Node19]> {
-	return arg[0] && arg[0]._Node14Brand
-		&& arg[1] && arg[1]._Node15Brand
-		&& arg[2] && arg[2]._Node20Brand
-		&& arg[3] && arg[3]._Node19Brand
+	return arg[0] && arg[0]._Node14Brand && arg[1] && arg[1]._Node15Brand && arg[2] && arg[2]._Node20Brand && arg[3] && arg[3]._Node19Brand
 }
 
 function startsWithNode15(arg: any): arg is AddUnknownNodeRest<[Node15]> {
@@ -774,31 +727,19 @@ function startsWithNode21(arg: any): arg is AddUnknownNodeRest<[Node21]> {
 }
 
 function startsWithNode21Node22Node20Node16(arg: any): arg is AddUnknownNodeRest<[Node21, Node22, Node20, Node16]> {
-	return arg[0] && arg[0]._Node21Brand
-		&& arg[1] && arg[1]._Node22Brand
-		&& arg[2] && arg[2]._Node20Brand
-		&& arg[3] && arg[3]._Node16Brand
+	return arg[0] && arg[0]._Node21Brand && arg[1] && arg[1]._Node22Brand && arg[2] && arg[2]._Node20Brand && arg[3] && arg[3]._Node16Brand
 }
 
 function startsWithNode21Node22Node20Node17(arg: any): arg is AddUnknownNodeRest<[Node21, Node22, Node20, Node17]> {
-	return arg[0] && arg[0]._Node21Brand
-		&& arg[1] && arg[1]._Node22Brand
-		&& arg[2] && arg[2]._Node20Brand
-		&& arg[3] && arg[3]._Node17Brand
+	return arg[0] && arg[0]._Node21Brand && arg[1] && arg[1]._Node22Brand && arg[2] && arg[2]._Node20Brand && arg[3] && arg[3]._Node17Brand
 }
 
 function startsWithNode21Node22Node20Node18(arg: any): arg is AddUnknownNodeRest<[Node21, Node22, Node20, Node18]> {
-	return arg[0] && arg[0]._Node21Brand
-		&& arg[1] && arg[1]._Node22Brand
-		&& arg[2] && arg[2]._Node20Brand
-		&& arg[3] && arg[3]._Node18Brand
+	return arg[0] && arg[0]._Node21Brand && arg[1] && arg[1]._Node22Brand && arg[2] && arg[2]._Node20Brand && arg[3] && arg[3]._Node18Brand
 }
 
 function startsWithNode21Node22Node20Node19(arg: any): arg is AddUnknownNodeRest<[Node21, Node22, Node20, Node19]> {
-	return arg[0] && arg[0]._Node21Brand
-		&& arg[1] && arg[1]._Node22Brand
-		&& arg[2] && arg[2]._Node20Brand
-		&& arg[3] && arg[3]._Node19Brand
+	return arg[0] && arg[0]._Node21Brand && arg[1] && arg[1]._Node22Brand && arg[2] && arg[2]._Node20Brand && arg[3] && arg[3]._Node19Brand
 }
 
 function startsWithNode22(arg: any): arg is AddUnknownNodeRest<[Node22]> {
@@ -810,73 +751,43 @@ function startsWithNode23(arg: any): arg is AddUnknownNodeRest<[Node23]> {
 }
 
 function startsWithNode23Node24Node11Node12(arg: any): arg is AddUnknownNodeRest<[Node23, Node24, Node11, Node12]> {
-	return arg[0] && arg[0]._Node23Brand
-		&& arg[1] && arg[1]._Node24Brand
-		&& arg[2] && arg[2]._Node11Brand
-		&& arg[3] && arg[3]._Node12Brand
+	return arg[0] && arg[0]._Node23Brand && arg[1] && arg[1]._Node24Brand && arg[2] && arg[2]._Node11Brand && arg[3] && arg[3]._Node12Brand
 }
 
 function startsWithNode23Node24Node14Node15(arg: any): arg is AddUnknownNodeRest<[Node23, Node24, Node14, Node15]> {
-	return arg[0] && arg[0]._Node23Brand
-		&& arg[1] && arg[1]._Node24Brand
-		&& arg[2] && arg[2]._Node14Brand
-		&& arg[3] && arg[3]._Node15Brand
+	return arg[0] && arg[0]._Node23Brand && arg[1] && arg[1]._Node24Brand && arg[2] && arg[2]._Node14Brand && arg[3] && arg[3]._Node15Brand
 }
 
 function startsWithNode23Node24Node20Node16(arg: any): arg is AddUnknownNodeRest<[Node23, Node24, Node20, Node16]> {
-	return arg[0] && arg[0]._Node23Brand
-		&& arg[1] && arg[1]._Node24Brand
-		&& arg[2] && arg[2]._Node20Brand
-		&& arg[3] && arg[3]._Node16Brand
+	return arg[0] && arg[0]._Node23Brand && arg[1] && arg[1]._Node24Brand && arg[2] && arg[2]._Node20Brand && arg[3] && arg[3]._Node16Brand
 }
 
 function startsWithNode23Node24Node20Node17(arg: any): arg is AddUnknownNodeRest<[Node23, Node24, Node20, Node17]> {
-	return arg[0] && arg[0]._Node23Brand
-		&& arg[1] && arg[1]._Node24Brand
-		&& arg[2] && arg[2]._Node20Brand
-		&& arg[3] && arg[3]._Node17Brand
+	return arg[0] && arg[0]._Node23Brand && arg[1] && arg[1]._Node24Brand && arg[2] && arg[2]._Node20Brand && arg[3] && arg[3]._Node17Brand
 }
 
 function startsWithNode23Node24Node20Node18(arg: any): arg is AddUnknownNodeRest<[Node23, Node24, Node20, Node18]> {
-	return arg[0] && arg[0]._Node23Brand
-		&& arg[1] && arg[1]._Node24Brand
-		&& arg[2] && arg[2]._Node20Brand
-		&& arg[3] && arg[3]._Node18Brand
+	return arg[0] && arg[0]._Node23Brand && arg[1] && arg[1]._Node24Brand && arg[2] && arg[2]._Node20Brand && arg[3] && arg[3]._Node18Brand
 }
 
 function startsWithNode23Node24Node20Node19(arg: any): arg is AddUnknownNodeRest<[Node23, Node24, Node20, Node19]> {
-	return arg[0] && arg[0]._Node23Brand
-		&& arg[1] && arg[1]._Node24Brand
-		&& arg[2] && arg[2]._Node20Brand
-		&& arg[3] && arg[3]._Node19Brand
+	return arg[0] && arg[0]._Node23Brand && arg[1] && arg[1]._Node24Brand && arg[2] && arg[2]._Node20Brand && arg[3] && arg[3]._Node19Brand
 }
 
 function startsWithNode23Node24Node21Node22(arg: any): arg is AddUnknownNodeRest<[Node23, Node24, Node21, Node22]> {
-	return arg[0] && arg[0]._Node23Brand
-		&& arg[1] && arg[1]._Node24Brand
-		&& arg[2] && arg[2]._Node21Brand
-		&& arg[3] && arg[3]._Node22Brand
+	return arg[0] && arg[0]._Node23Brand && arg[1] && arg[1]._Node24Brand && arg[2] && arg[2]._Node21Brand && arg[3] && arg[3]._Node22Brand
 }
 
 function startsWithNode23Node24Node23Node24(arg: any): arg is AddUnknownNodeRest<[Node23, Node24, Node23, Node24]> {
-	return arg[0] && arg[0]._Node23Brand
-		&& arg[1] && arg[1]._Node24Brand
-		&& arg[2] && arg[2]._Node23Brand
-		&& arg[3] && arg[3]._Node24Brand
+	return arg[0] && arg[0]._Node23Brand && arg[1] && arg[1]._Node24Brand && arg[2] && arg[2]._Node23Brand && arg[3] && arg[3]._Node24Brand
 }
 
 function startsWithNode23Node24Node27Node25(arg: any): arg is AddUnknownNodeRest<[Node23, Node24, Node27, Node25]> {
-	return arg[0] && arg[0]._Node23Brand
-		&& arg[1] && arg[1]._Node24Brand
-		&& arg[2] && arg[2]._Node27Brand
-		&& arg[3] && arg[3]._Node25Brand
+	return arg[0] && arg[0]._Node23Brand && arg[1] && arg[1]._Node24Brand && arg[2] && arg[2]._Node27Brand && arg[3] && arg[3]._Node25Brand
 }
 
 function startsWithNode23Node24Node28Node26(arg: any): arg is AddUnknownNodeRest<[Node23, Node24, Node28, Node26]> {
-	return arg[0] && arg[0]._Node23Brand
-		&& arg[1] && arg[1]._Node24Brand
-		&& arg[2] && arg[2]._Node28Brand
-		&& arg[3] && arg[3]._Node26Brand
+	return arg[0] && arg[0]._Node23Brand && arg[1] && arg[1]._Node24Brand && arg[2] && arg[2]._Node28Brand && arg[3] && arg[3]._Node26Brand
 }
 
 function startsWithNode24(arg: any): arg is AddUnknownNodeRest<[Node24]> {
@@ -896,73 +807,43 @@ function startsWithNode27(arg: any): arg is AddUnknownNodeRest<[Node27]> {
 }
 
 function startsWithNode27Node25Node11Node12(arg: any): arg is AddUnknownNodeRest<[Node27, Node25, Node11, Node12]> {
-	return arg[0] && arg[0]._Node27Brand
-		&& arg[1] && arg[1]._Node25Brand
-		&& arg[2] && arg[2]._Node11Brand
-		&& arg[3] && arg[3]._Node12Brand
+	return arg[0] && arg[0]._Node27Brand && arg[1] && arg[1]._Node25Brand && arg[2] && arg[2]._Node11Brand && arg[3] && arg[3]._Node12Brand
 }
 
 function startsWithNode27Node25Node14Node15(arg: any): arg is AddUnknownNodeRest<[Node27, Node25, Node14, Node15]> {
-	return arg[0] && arg[0]._Node27Brand
-		&& arg[1] && arg[1]._Node25Brand
-		&& arg[2] && arg[2]._Node14Brand
-		&& arg[3] && arg[3]._Node15Brand
+	return arg[0] && arg[0]._Node27Brand && arg[1] && arg[1]._Node25Brand && arg[2] && arg[2]._Node14Brand && arg[3] && arg[3]._Node15Brand
 }
 
 function startsWithNode27Node25Node20Node16(arg: any): arg is AddUnknownNodeRest<[Node27, Node25, Node20, Node16]> {
-	return arg[0] && arg[0]._Node27Brand
-		&& arg[1] && arg[1]._Node25Brand
-		&& arg[2] && arg[2]._Node20Brand
-		&& arg[3] && arg[3]._Node16Brand
+	return arg[0] && arg[0]._Node27Brand && arg[1] && arg[1]._Node25Brand && arg[2] && arg[2]._Node20Brand && arg[3] && arg[3]._Node16Brand
 }
 
 function startsWithNode27Node25Node20Node17(arg: any): arg is AddUnknownNodeRest<[Node27, Node25, Node20, Node17]> {
-	return arg[0] && arg[0]._Node27Brand
-		&& arg[1] && arg[1]._Node25Brand
-		&& arg[2] && arg[2]._Node20Brand
-		&& arg[3] && arg[3]._Node17Brand
+	return arg[0] && arg[0]._Node27Brand && arg[1] && arg[1]._Node25Brand && arg[2] && arg[2]._Node20Brand && arg[3] && arg[3]._Node17Brand
 }
 
 function startsWithNode27Node25Node20Node18(arg: any): arg is AddUnknownNodeRest<[Node27, Node25, Node20, Node18]> {
-	return arg[0] && arg[0]._Node27Brand
-		&& arg[1] && arg[1]._Node25Brand
-		&& arg[2] && arg[2]._Node20Brand
-		&& arg[3] && arg[3]._Node18Brand
+	return arg[0] && arg[0]._Node27Brand && arg[1] && arg[1]._Node25Brand && arg[2] && arg[2]._Node20Brand && arg[3] && arg[3]._Node18Brand
 }
 
 function startsWithNode27Node25Node20Node19(arg: any): arg is AddUnknownNodeRest<[Node27, Node25, Node20, Node19]> {
-	return arg[0] && arg[0]._Node27Brand
-		&& arg[1] && arg[1]._Node25Brand
-		&& arg[2] && arg[2]._Node20Brand
-		&& arg[3] && arg[3]._Node19Brand
+	return arg[0] && arg[0]._Node27Brand && arg[1] && arg[1]._Node25Brand && arg[2] && arg[2]._Node20Brand && arg[3] && arg[3]._Node19Brand
 }
 
 function startsWithNode27Node25Node21Node22(arg: any): arg is AddUnknownNodeRest<[Node27, Node25, Node21, Node22]> {
-	return arg[0] && arg[0]._Node27Brand
-		&& arg[1] && arg[1]._Node25Brand
-		&& arg[2] && arg[2]._Node21Brand
-		&& arg[3] && arg[3]._Node22Brand
+	return arg[0] && arg[0]._Node27Brand && arg[1] && arg[1]._Node25Brand && arg[2] && arg[2]._Node21Brand && arg[3] && arg[3]._Node22Brand
 }
 
 function startsWithNode27Node25Node23Node24(arg: any): arg is AddUnknownNodeRest<[Node27, Node25, Node23, Node24]> {
-	return arg[0] && arg[0]._Node27Brand
-		&& arg[1] && arg[1]._Node25Brand
-		&& arg[2] && arg[2]._Node23Brand
-		&& arg[3] && arg[3]._Node24Brand
+	return arg[0] && arg[0]._Node27Brand && arg[1] && arg[1]._Node25Brand && arg[2] && arg[2]._Node23Brand && arg[3] && arg[3]._Node24Brand
 }
 
 function startsWithNode27Node25Node27Node25(arg: any): arg is AddUnknownNodeRest<[Node27, Node25, Node27, Node25]> {
-	return arg[0] && arg[0]._Node27Brand
-		&& arg[1] && arg[1]._Node25Brand
-		&& arg[2] && arg[2]._Node27Brand
-		&& arg[3] && arg[3]._Node25Brand
+	return arg[0] && arg[0]._Node27Brand && arg[1] && arg[1]._Node25Brand && arg[2] && arg[2]._Node27Brand && arg[3] && arg[3]._Node25Brand
 }
 
 function startsWithNode27Node25Node28Node26(arg: any): arg is AddUnknownNodeRest<[Node27, Node25, Node28, Node26]> {
-	return arg[0] && arg[0]._Node27Brand
-		&& arg[1] && arg[1]._Node25Brand
-		&& arg[2] && arg[2]._Node28Brand
-		&& arg[3] && arg[3]._Node26Brand
+	return arg[0] && arg[0]._Node27Brand && arg[1] && arg[1]._Node25Brand && arg[2] && arg[2]._Node28Brand && arg[3] && arg[3]._Node26Brand
 }
 
 function startsWithNode28(arg: any): arg is AddUnknownNodeRest<[Node28]> {
@@ -970,73 +851,43 @@ function startsWithNode28(arg: any): arg is AddUnknownNodeRest<[Node28]> {
 }
 
 function startsWithNode28Node26Node11Node12(arg: any): arg is AddUnknownNodeRest<[Node28, Node26, Node11, Node12]> {
-	return arg[0] && arg[0]._Node28Brand
-		&& arg[1] && arg[1]._Node26Brand
-		&& arg[2] && arg[2]._Node11Brand
-		&& arg[3] && arg[3]._Node12Brand
+	return arg[0] && arg[0]._Node28Brand && arg[1] && arg[1]._Node26Brand && arg[2] && arg[2]._Node11Brand && arg[3] && arg[3]._Node12Brand
 }
 
 function startsWithNode28Node26Node14Node15(arg: any): arg is AddUnknownNodeRest<[Node28, Node26, Node14, Node15]> {
-	return arg[0] && arg[0]._Node28Brand
-		&& arg[1] && arg[1]._Node26Brand
-		&& arg[2] && arg[2]._Node14Brand
-		&& arg[3] && arg[3]._Node15Brand
+	return arg[0] && arg[0]._Node28Brand && arg[1] && arg[1]._Node26Brand && arg[2] && arg[2]._Node14Brand && arg[3] && arg[3]._Node15Brand
 }
 
 function startsWithNode28Node26Node20Node16(arg: any): arg is AddUnknownNodeRest<[Node28, Node26, Node20, Node16]> {
-	return arg[0] && arg[0]._Node28Brand
-		&& arg[1] && arg[1]._Node26Brand
-		&& arg[2] && arg[2]._Node20Brand
-		&& arg[3] && arg[3]._Node16Brand
+	return arg[0] && arg[0]._Node28Brand && arg[1] && arg[1]._Node26Brand && arg[2] && arg[2]._Node20Brand && arg[3] && arg[3]._Node16Brand
 }
 
 function startsWithNode28Node26Node20Node17(arg: any): arg is AddUnknownNodeRest<[Node28, Node26, Node20, Node17]> {
-	return arg[0] && arg[0]._Node28Brand
-		&& arg[1] && arg[1]._Node26Brand
-		&& arg[2] && arg[2]._Node20Brand
-		&& arg[3] && arg[3]._Node17Brand
+	return arg[0] && arg[0]._Node28Brand && arg[1] && arg[1]._Node26Brand && arg[2] && arg[2]._Node20Brand && arg[3] && arg[3]._Node17Brand
 }
 
 function startsWithNode28Node26Node20Node18(arg: any): arg is AddUnknownNodeRest<[Node28, Node26, Node20, Node18]> {
-	return arg[0] && arg[0]._Node28Brand
-		&& arg[1] && arg[1]._Node26Brand
-		&& arg[2] && arg[2]._Node20Brand
-		&& arg[3] && arg[3]._Node18Brand
+	return arg[0] && arg[0]._Node28Brand && arg[1] && arg[1]._Node26Brand && arg[2] && arg[2]._Node20Brand && arg[3] && arg[3]._Node18Brand
 }
 
 function startsWithNode28Node26Node20Node19(arg: any): arg is AddUnknownNodeRest<[Node28, Node26, Node20, Node19]> {
-	return arg[0] && arg[0]._Node28Brand
-		&& arg[1] && arg[1]._Node26Brand
-		&& arg[2] && arg[2]._Node20Brand
-		&& arg[3] && arg[3]._Node19Brand
+	return arg[0] && arg[0]._Node28Brand && arg[1] && arg[1]._Node26Brand && arg[2] && arg[2]._Node20Brand && arg[3] && arg[3]._Node19Brand
 }
 
 function startsWithNode28Node26Node21Node22(arg: any): arg is AddUnknownNodeRest<[Node28, Node26, Node21, Node22]> {
-	return arg[0] && arg[0]._Node28Brand
-		&& arg[1] && arg[1]._Node26Brand
-		&& arg[2] && arg[2]._Node21Brand
-		&& arg[3] && arg[3]._Node22Brand
+	return arg[0] && arg[0]._Node28Brand && arg[1] && arg[1]._Node26Brand && arg[2] && arg[2]._Node21Brand && arg[3] && arg[3]._Node22Brand
 }
 
 function startsWithNode28Node26Node23Node24(arg: any): arg is AddUnknownNodeRest<[Node28, Node26, Node23, Node24]> {
-	return arg[0] && arg[0]._Node28Brand
-		&& arg[1] && arg[1]._Node26Brand
-		&& arg[2] && arg[2]._Node23Brand
-		&& arg[3] && arg[3]._Node24Brand
+	return arg[0] && arg[0]._Node28Brand && arg[1] && arg[1]._Node26Brand && arg[2] && arg[2]._Node23Brand && arg[3] && arg[3]._Node24Brand
 }
 
 function startsWithNode28Node26Node27Node25(arg: any): arg is AddUnknownNodeRest<[Node28, Node26, Node27, Node25]> {
-	return arg[0] && arg[0]._Node28Brand
-		&& arg[1] && arg[1]._Node26Brand
-		&& arg[2] && arg[2]._Node27Brand
-		&& arg[3] && arg[3]._Node25Brand
+	return arg[0] && arg[0]._Node28Brand && arg[1] && arg[1]._Node26Brand && arg[2] && arg[2]._Node27Brand && arg[3] && arg[3]._Node25Brand
 }
 
 function startsWithNode28Node26Node28Node26(arg: any): arg is AddUnknownNodeRest<[Node28, Node26, Node28, Node26]> {
-	return arg[0] && arg[0]._Node28Brand
-		&& arg[1] && arg[1]._Node26Brand
-		&& arg[2] && arg[2]._Node28Brand
-		&& arg[3] && arg[3]._Node26Brand
+	return arg[0] && arg[0]._Node28Brand && arg[1] && arg[1]._Node26Brand && arg[2] && arg[2]._Node28Brand && arg[3] && arg[3]._Node26Brand
 }
 
 function startsWithNode29(arg: any): arg is AddUnknownNodeRest<[Node29]> {
@@ -1044,31 +895,19 @@ function startsWithNode29(arg: any): arg is AddUnknownNodeRest<[Node29]> {
 }
 
 function startsWithNode29Node17Node29Node17(arg: any): arg is AddUnknownNodeRest<[Node29, Node17, Node29, Node17]> {
-	return arg[0] && arg[0]._Node29Brand
-		&& arg[1] && arg[1]._Node17Brand
-		&& arg[2] && arg[2]._Node29Brand
-		&& arg[3] && arg[3]._Node17Brand
+	return arg[0] && arg[0]._Node29Brand && arg[1] && arg[1]._Node17Brand && arg[2] && arg[2]._Node29Brand && arg[3] && arg[3]._Node17Brand
 }
 
 function startsWithNode29Node17Node30Node16(arg: any): arg is AddUnknownNodeRest<[Node29, Node17, Node30, Node16]> {
-	return arg[0] && arg[0]._Node29Brand
-		&& arg[1] && arg[1]._Node17Brand
-		&& arg[2] && arg[2]._Node30Brand
-		&& arg[3] && arg[3]._Node16Brand
+	return arg[0] && arg[0]._Node29Brand && arg[1] && arg[1]._Node17Brand && arg[2] && arg[2]._Node30Brand && arg[3] && arg[3]._Node16Brand
 }
 
 function startsWithNode29Node17Node31Node18(arg: any): arg is AddUnknownNodeRest<[Node29, Node17, Node31, Node18]> {
-	return arg[0] && arg[0]._Node29Brand
-		&& arg[1] && arg[1]._Node17Brand
-		&& arg[2] && arg[2]._Node31Brand
-		&& arg[3] && arg[3]._Node18Brand
+	return arg[0] && arg[0]._Node29Brand && arg[1] && arg[1]._Node17Brand && arg[2] && arg[2]._Node31Brand && arg[3] && arg[3]._Node18Brand
 }
 
 function startsWithNode29Node17Node32Node19(arg: any): arg is AddUnknownNodeRest<[Node29, Node17, Node32, Node19]> {
-	return arg[0] && arg[0]._Node29Brand
-		&& arg[1] && arg[1]._Node17Brand
-		&& arg[2] && arg[2]._Node32Brand
-		&& arg[3] && arg[3]._Node19Brand
+	return arg[0] && arg[0]._Node29Brand && arg[1] && arg[1]._Node17Brand && arg[2] && arg[2]._Node32Brand && arg[3] && arg[3]._Node19Brand
 }
 
 function startsWithNode3(arg: any): arg is AddUnknownNodeRest<[Node3]> {
@@ -1076,38 +915,23 @@ function startsWithNode3(arg: any): arg is AddUnknownNodeRest<[Node3]> {
 }
 
 function startsWithNode3Node4Node10Node7(arg: any): arg is AddUnknownNodeRest<[Node3, Node4, Node10, Node7]> {
-	return arg[0] && arg[0]._Node3Brand
-		&& arg[1] && arg[1]._Node4Brand
-		&& arg[2] && arg[2]._Node10Brand
-		&& arg[3] && arg[3]._Node7Brand
+	return arg[0] && arg[0]._Node3Brand && arg[1] && arg[1]._Node4Brand && arg[2] && arg[2]._Node10Brand && arg[3] && arg[3]._Node7Brand
 }
 
 function startsWithNode3Node4Node2Node1(arg: any): arg is AddUnknownNodeRest<[Node3, Node4, Node2, Node1]> {
-	return arg[0] && arg[0]._Node3Brand
-		&& arg[1] && arg[1]._Node4Brand
-		&& arg[2] && arg[2]._Node2Brand
-		&& arg[3] && arg[3]._Node1Brand
+	return arg[0] && arg[0]._Node3Brand && arg[1] && arg[1]._Node4Brand && arg[2] && arg[2]._Node2Brand && arg[3] && arg[3]._Node1Brand
 }
 
 function startsWithNode3Node4Node3Node4(arg: any): arg is AddUnknownNodeRest<[Node3, Node4, Node3, Node4]> {
-	return arg[0] && arg[0]._Node3Brand
-		&& arg[1] && arg[1]._Node4Brand
-		&& arg[2] && arg[2]._Node3Brand
-		&& arg[3] && arg[3]._Node4Brand
+	return arg[0] && arg[0]._Node3Brand && arg[1] && arg[1]._Node4Brand && arg[2] && arg[2]._Node3Brand && arg[3] && arg[3]._Node4Brand
 }
 
 function startsWithNode3Node4Node8Node5(arg: any): arg is AddUnknownNodeRest<[Node3, Node4, Node8, Node5]> {
-	return arg[0] && arg[0]._Node3Brand
-		&& arg[1] && arg[1]._Node4Brand
-		&& arg[2] && arg[2]._Node8Brand
-		&& arg[3] && arg[3]._Node5Brand
+	return arg[0] && arg[0]._Node3Brand && arg[1] && arg[1]._Node4Brand && arg[2] && arg[2]._Node8Brand && arg[3] && arg[3]._Node5Brand
 }
 
 function startsWithNode3Node4Node9Node6(arg: any): arg is AddUnknownNodeRest<[Node3, Node4, Node9, Node6]> {
-	return arg[0] && arg[0]._Node3Brand
-		&& arg[1] && arg[1]._Node4Brand
-		&& arg[2] && arg[2]._Node9Brand
-		&& arg[3] && arg[3]._Node6Brand
+	return arg[0] && arg[0]._Node3Brand && arg[1] && arg[1]._Node4Brand && arg[2] && arg[2]._Node9Brand && arg[3] && arg[3]._Node6Brand
 }
 
 function startsWithNode30(arg: any): arg is AddUnknownNodeRest<[Node30]> {
@@ -1119,27 +943,19 @@ function startsWithNode31(arg: any): arg is AddUnknownNodeRest<[Node31]> {
 }
 
 function startsWithNode31Node18Node16(arg: any): arg is AddUnknownNodeRest<[Node31, Node18, Node16]> {
-	return arg[0] && arg[0]._Node31Brand
-		&& arg[1] && arg[1]._Node18Brand
-		&& arg[2] && arg[2]._Node16Brand
+	return arg[0] && arg[0]._Node31Brand && arg[1] && arg[1]._Node18Brand && arg[2] && arg[2]._Node16Brand
 }
 
 function startsWithNode31Node18Node17(arg: any): arg is AddUnknownNodeRest<[Node31, Node18, Node17]> {
-	return arg[0] && arg[0]._Node31Brand
-		&& arg[1] && arg[1]._Node18Brand
-		&& arg[2] && arg[2]._Node17Brand
+	return arg[0] && arg[0]._Node31Brand && arg[1] && arg[1]._Node18Brand && arg[2] && arg[2]._Node17Brand
 }
 
 function startsWithNode31Node18Node18(arg: any): arg is AddUnknownNodeRest<[Node31, Node18, Node18]> {
-	return arg[0] && arg[0]._Node31Brand
-		&& arg[1] && arg[1]._Node18Brand
-		&& arg[2] && arg[2]._Node18Brand
+	return arg[0] && arg[0]._Node31Brand && arg[1] && arg[1]._Node18Brand && arg[2] && arg[2]._Node18Brand
 }
 
 function startsWithNode31Node18Node19(arg: any): arg is AddUnknownNodeRest<[Node31, Node18, Node19]> {
-	return arg[0] && arg[0]._Node31Brand
-		&& arg[1] && arg[1]._Node18Brand
-		&& arg[2] && arg[2]._Node19Brand
+	return arg[0] && arg[0]._Node31Brand && arg[1] && arg[1]._Node18Brand && arg[2] && arg[2]._Node19Brand
 }
 
 function startsWithNode32(arg: any): arg is AddUnknownNodeRest<[Node32]> {
@@ -1147,168 +963,135 @@ function startsWithNode32(arg: any): arg is AddUnknownNodeRest<[Node32]> {
 }
 
 function startsWithNode33Node16(arg: any): arg is AddUnknownNodeRest<[Node33, Node16]> {
-	return arg[0] && arg[0]._Node33Brand
-		&& arg[1] && arg[1]._Node16Brand
+	return arg[0] && arg[0]._Node33Brand && arg[1] && arg[1]._Node16Brand
 }
 
 function startsWithNode33Node17(arg: any): arg is AddUnknownNodeRest<[Node33, Node17]> {
-	return arg[0] && arg[0]._Node33Brand
-		&& arg[1] && arg[1]._Node17Brand
+	return arg[0] && arg[0]._Node33Brand && arg[1] && arg[1]._Node17Brand
 }
 
 function startsWithNode33Node18(arg: any): arg is AddUnknownNodeRest<[Node33, Node18]> {
-	return arg[0] && arg[0]._Node33Brand
-		&& arg[1] && arg[1]._Node18Brand
+	return arg[0] && arg[0]._Node33Brand && arg[1] && arg[1]._Node18Brand
 }
 
 function startsWithNode33Node19(arg: any): arg is AddUnknownNodeRest<[Node33, Node19]> {
-	return arg[0] && arg[0]._Node33Brand
-		&& arg[1] && arg[1]._Node19Brand
+	return arg[0] && arg[0]._Node33Brand && arg[1] && arg[1]._Node19Brand
 }
 
 function startsWithNode34Node12(arg: any): arg is AddUnknownNodeRest<[Node34, Node12]> {
-	return arg[0] && arg[0]._Node34Brand
-		&& arg[1] && arg[1]._Node12Brand
+	return arg[0] && arg[0]._Node34Brand && arg[1] && arg[1]._Node12Brand
 }
 
 function startsWithNode34Node15(arg: any): arg is AddUnknownNodeRest<[Node34, Node15]> {
-	return arg[0] && arg[0]._Node34Brand
-		&& arg[1] && arg[1]._Node15Brand
+	return arg[0] && arg[0]._Node34Brand && arg[1] && arg[1]._Node15Brand
 }
 
 function startsWithNode34Node16(arg: any): arg is AddUnknownNodeRest<[Node34, Node16]> {
-	return arg[0] && arg[0]._Node34Brand
-		&& arg[1] && arg[1]._Node16Brand
+	return arg[0] && arg[0]._Node34Brand && arg[1] && arg[1]._Node16Brand
 }
 
 function startsWithNode34Node17(arg: any): arg is AddUnknownNodeRest<[Node34, Node17]> {
-	return arg[0] && arg[0]._Node34Brand
-		&& arg[1] && arg[1]._Node17Brand
+	return arg[0] && arg[0]._Node34Brand && arg[1] && arg[1]._Node17Brand
 }
 
 function startsWithNode34Node18(arg: any): arg is AddUnknownNodeRest<[Node34, Node18]> {
-	return arg[0] && arg[0]._Node34Brand
-		&& arg[1] && arg[1]._Node18Brand
+	return arg[0] && arg[0]._Node34Brand && arg[1] && arg[1]._Node18Brand
 }
 
 function startsWithNode34Node19(arg: any): arg is AddUnknownNodeRest<[Node34, Node19]> {
-	return arg[0] && arg[0]._Node34Brand
-		&& arg[1] && arg[1]._Node19Brand
+	return arg[0] && arg[0]._Node34Brand && arg[1] && arg[1]._Node19Brand
 }
 
 function startsWithNode34Node22(arg: any): arg is AddUnknownNodeRest<[Node34, Node22]> {
-	return arg[0] && arg[0]._Node34Brand
-		&& arg[1] && arg[1]._Node22Brand
+	return arg[0] && arg[0]._Node34Brand && arg[1] && arg[1]._Node22Brand
 }
 
 function startsWithNode34Node24(arg: any): arg is AddUnknownNodeRest<[Node34, Node24]> {
-	return arg[0] && arg[0]._Node34Brand
-		&& arg[1] && arg[1]._Node24Brand
+	return arg[0] && arg[0]._Node34Brand && arg[1] && arg[1]._Node24Brand
 }
 
 function startsWithNode34Node25(arg: any): arg is AddUnknownNodeRest<[Node34, Node25]> {
-	return arg[0] && arg[0]._Node34Brand
-		&& arg[1] && arg[1]._Node25Brand
+	return arg[0] && arg[0]._Node34Brand && arg[1] && arg[1]._Node25Brand
 }
 
 function startsWithNode34Node26(arg: any): arg is AddUnknownNodeRest<[Node34, Node26]> {
-	return arg[0] && arg[0]._Node34Brand
-		&& arg[1] && arg[1]._Node26Brand
+	return arg[0] && arg[0]._Node34Brand && arg[1] && arg[1]._Node26Brand
 }
 
 function startsWithNode35Node1(arg: any): arg is AddUnknownNodeRest<[Node35, Node1]> {
-	return arg[0] && arg[0]._Node35Brand
-		&& arg[1] && arg[1]._Node1Brand
+	return arg[0] && arg[0]._Node35Brand && arg[1] && arg[1]._Node1Brand
 }
 
 function startsWithNode35Node4(arg: any): arg is AddUnknownNodeRest<[Node35, Node4]> {
-	return arg[0] && arg[0]._Node35Brand
-		&& arg[1] && arg[1]._Node4Brand
+	return arg[0] && arg[0]._Node35Brand && arg[1] && arg[1]._Node4Brand
 }
 
 function startsWithNode35Node5(arg: any): arg is AddUnknownNodeRest<[Node35, Node5]> {
-	return arg[0] && arg[0]._Node35Brand
-		&& arg[1] && arg[1]._Node5Brand
+	return arg[0] && arg[0]._Node35Brand && arg[1] && arg[1]._Node5Brand
 }
 
 function startsWithNode35Node6(arg: any): arg is AddUnknownNodeRest<[Node35, Node6]> {
-	return arg[0] && arg[0]._Node35Brand
-		&& arg[1] && arg[1]._Node6Brand
+	return arg[0] && arg[0]._Node35Brand && arg[1] && arg[1]._Node6Brand
 }
 
 function startsWithNode35Node7(arg: any): arg is AddUnknownNodeRest<[Node35, Node7]> {
-	return arg[0] && arg[0]._Node35Brand
-		&& arg[1] && arg[1]._Node7Brand
+	return arg[0] && arg[0]._Node35Brand && arg[1] && arg[1]._Node7Brand
 }
 
 function startsWithNode36Node16(arg: any): arg is AddUnknownNodeRest<[Node36, Node16]> {
-	return arg[0] && arg[0]._Node36Brand
-		&& arg[1] && arg[1]._Node16Brand
+	return arg[0] && arg[0]._Node36Brand && arg[1] && arg[1]._Node16Brand
 }
 
 function startsWithNode36Node17(arg: any): arg is AddUnknownNodeRest<[Node36, Node17]> {
-	return arg[0] && arg[0]._Node36Brand
-		&& arg[1] && arg[1]._Node17Brand
+	return arg[0] && arg[0]._Node36Brand && arg[1] && arg[1]._Node17Brand
 }
 
 function startsWithNode36Node18(arg: any): arg is AddUnknownNodeRest<[Node36, Node18]> {
-	return arg[0] && arg[0]._Node36Brand
-		&& arg[1] && arg[1]._Node18Brand
+	return arg[0] && arg[0]._Node36Brand && arg[1] && arg[1]._Node18Brand
 }
 
 function startsWithNode36Node19(arg: any): arg is AddUnknownNodeRest<[Node36, Node19]> {
-	return arg[0] && arg[0]._Node36Brand
-		&& arg[1] && arg[1]._Node19Brand
+	return arg[0] && arg[0]._Node36Brand && arg[1] && arg[1]._Node19Brand
 }
 
 function startsWithNode37Node12(arg: any): arg is AddUnknownNodeRest<[Node37, Node12]> {
-	return arg[0] && arg[0]._Node37Brand
-		&& arg[1] && arg[1]._Node12Brand
+	return arg[0] && arg[0]._Node37Brand && arg[1] && arg[1]._Node12Brand
 }
 
 function startsWithNode37Node15(arg: any): arg is AddUnknownNodeRest<[Node37, Node15]> {
-	return arg[0] && arg[0]._Node37Brand
-		&& arg[1] && arg[1]._Node15Brand
+	return arg[0] && arg[0]._Node37Brand && arg[1] && arg[1]._Node15Brand
 }
 
 function startsWithNode37Node16(arg: any): arg is AddUnknownNodeRest<[Node37, Node16]> {
-	return arg[0] && arg[0]._Node37Brand
-		&& arg[1] && arg[1]._Node16Brand
+	return arg[0] && arg[0]._Node37Brand && arg[1] && arg[1]._Node16Brand
 }
 
 function startsWithNode37Node17(arg: any): arg is AddUnknownNodeRest<[Node37, Node17]> {
-	return arg[0] && arg[0]._Node37Brand
-		&& arg[1] && arg[1]._Node17Brand
+	return arg[0] && arg[0]._Node37Brand && arg[1] && arg[1]._Node17Brand
 }
 
 function startsWithNode37Node18(arg: any): arg is AddUnknownNodeRest<[Node37, Node18]> {
-	return arg[0] && arg[0]._Node37Brand
-		&& arg[1] && arg[1]._Node18Brand
+	return arg[0] && arg[0]._Node37Brand && arg[1] && arg[1]._Node18Brand
 }
 
 function startsWithNode37Node19(arg: any): arg is AddUnknownNodeRest<[Node37, Node19]> {
-	return arg[0] && arg[0]._Node37Brand
-		&& arg[1] && arg[1]._Node19Brand
+	return arg[0] && arg[0]._Node37Brand && arg[1] && arg[1]._Node19Brand
 }
 
 function startsWithNode37Node22(arg: any): arg is AddUnknownNodeRest<[Node37, Node22]> {
-	return arg[0] && arg[0]._Node37Brand
-		&& arg[1] && arg[1]._Node22Brand
+	return arg[0] && arg[0]._Node37Brand && arg[1] && arg[1]._Node22Brand
 }
 
 function startsWithNode37Node24(arg: any): arg is AddUnknownNodeRest<[Node37, Node24]> {
-	return arg[0] && arg[0]._Node37Brand
-		&& arg[1] && arg[1]._Node24Brand
+	return arg[0] && arg[0]._Node37Brand && arg[1] && arg[1]._Node24Brand
 }
 
 function startsWithNode37Node25(arg: any): arg is AddUnknownNodeRest<[Node37, Node25]> {
-	return arg[0] && arg[0]._Node37Brand
-		&& arg[1] && arg[1]._Node25Brand
+	return arg[0] && arg[0]._Node37Brand && arg[1] && arg[1]._Node25Brand
 }
 
 function startsWithNode37Node26(arg: any): arg is AddUnknownNodeRest<[Node37, Node26]> {
-	return arg[0] && arg[0]._Node37Brand
-		&& arg[1] && arg[1]._Node26Brand
+	return arg[0] && arg[0]._Node37Brand && arg[1] && arg[1]._Node26Brand
 }
 
 function startsWithNode4(arg: any): arg is AddUnknownNodeRest<[Node4]> {
@@ -1336,53 +1119,23 @@ function startsWithNode9(arg: any): arg is AddUnknownNodeRest<[Node9]> {
 }
 
 function startsWithNode9Node6Node8Node5Node32Node19Node1(arg: any): arg is AddUnknownNodeRest<[Node9, Node6, Node8, Node5, Node32, Node19, Node1]> {
-	return arg[0] && arg[0]._Node9Brand
-		&& arg[1] && arg[1]._Node6Brand
-		&& arg[2] && arg[2]._Node8Brand
-		&& arg[3] && arg[3]._Node5Brand
-		&& arg[4] && arg[4]._Node32Brand
-		&& arg[5] && arg[5]._Node19Brand
-		&& arg[6] && arg[6]._Node1Brand
+	return arg[0] && arg[0]._Node9Brand && arg[1] && arg[1]._Node6Brand && arg[2] && arg[2]._Node8Brand && arg[3] && arg[3]._Node5Brand && arg[4] && arg[4]._Node32Brand && arg[5] && arg[5]._Node19Brand && arg[6] && arg[6]._Node1Brand
 }
 
 function startsWithNode9Node6Node8Node5Node32Node19Node4(arg: any): arg is AddUnknownNodeRest<[Node9, Node6, Node8, Node5, Node32, Node19, Node4]> {
-	return arg[0] && arg[0]._Node9Brand
-		&& arg[1] && arg[1]._Node6Brand
-		&& arg[2] && arg[2]._Node8Brand
-		&& arg[3] && arg[3]._Node5Brand
-		&& arg[4] && arg[4]._Node32Brand
-		&& arg[5] && arg[5]._Node19Brand
-		&& arg[6] && arg[6]._Node4Brand
+	return arg[0] && arg[0]._Node9Brand && arg[1] && arg[1]._Node6Brand && arg[2] && arg[2]._Node8Brand && arg[3] && arg[3]._Node5Brand && arg[4] && arg[4]._Node32Brand && arg[5] && arg[5]._Node19Brand && arg[6] && arg[6]._Node4Brand
 }
 
 function startsWithNode9Node6Node8Node5Node32Node19Node5(arg: any): arg is AddUnknownNodeRest<[Node9, Node6, Node8, Node5, Node32, Node19, Node5]> {
-	return arg[0] && arg[0]._Node9Brand
-		&& arg[1] && arg[1]._Node6Brand
-		&& arg[2] && arg[2]._Node8Brand
-		&& arg[3] && arg[3]._Node5Brand
-		&& arg[4] && arg[4]._Node32Brand
-		&& arg[5] && arg[5]._Node19Brand
-		&& arg[6] && arg[6]._Node5Brand
+	return arg[0] && arg[0]._Node9Brand && arg[1] && arg[1]._Node6Brand && arg[2] && arg[2]._Node8Brand && arg[3] && arg[3]._Node5Brand && arg[4] && arg[4]._Node32Brand && arg[5] && arg[5]._Node19Brand && arg[6] && arg[6]._Node5Brand
 }
 
 function startsWithNode9Node6Node8Node5Node32Node19Node6(arg: any): arg is AddUnknownNodeRest<[Node9, Node6, Node8, Node5, Node32, Node19, Node6]> {
-	return arg[0] && arg[0]._Node9Brand
-		&& arg[1] && arg[1]._Node6Brand
-		&& arg[2] && arg[2]._Node8Brand
-		&& arg[3] && arg[3]._Node5Brand
-		&& arg[4] && arg[4]._Node32Brand
-		&& arg[5] && arg[5]._Node19Brand
-		&& arg[6] && arg[6]._Node6Brand
+	return arg[0] && arg[0]._Node9Brand && arg[1] && arg[1]._Node6Brand && arg[2] && arg[2]._Node8Brand && arg[3] && arg[3]._Node5Brand && arg[4] && arg[4]._Node32Brand && arg[5] && arg[5]._Node19Brand && arg[6] && arg[6]._Node6Brand
 }
 
 function startsWithNode9Node6Node8Node5Node32Node19Node7(arg: any): arg is AddUnknownNodeRest<[Node9, Node6, Node8, Node5, Node32, Node19, Node7]> {
-	return arg[0] && arg[0]._Node9Brand
-		&& arg[1] && arg[1]._Node6Brand
-		&& arg[2] && arg[2]._Node8Brand
-		&& arg[3] && arg[3]._Node5Brand
-		&& arg[4] && arg[4]._Node32Brand
-		&& arg[5] && arg[5]._Node19Brand
-		&& arg[6] && arg[6]._Node7Brand
+	return arg[0] && arg[0]._Node9Brand && arg[1] && arg[1]._Node6Brand && arg[2] && arg[2]._Node8Brand && arg[3] && arg[3]._Node5Brand && arg[4] && arg[4]._Node32Brand && arg[5] && arg[5]._Node19Brand && arg[6] && arg[6]._Node7Brand
 }
 
 type Fluent<Stack extends unknown[]> = ({ 0: {}, 1: { andThen: () => Fluent<Prepend<Node4, Stack>> }}[StartsWith<Stack, [Node2]>])
@@ -2002,22 +1755,8 @@ class FluentImpl {
 			this.stack = [new Node2(content), ...tail]
 			return this.andThen()
 		}
-		if (startsWithNode10(this.stack)) {
-			this.stack = [new Node4(), ...this.stack]
-			return this
-		}		if (startsWithNode9(this.stack)) {
-			this.stack = [new Node4(), ...this.stack]
-			return this
-		}		if (startsWithNode8(this.stack)) {
-			this.stack = [new Node4(), ...this.stack]
-			return this
-		}		if (startsWithNode3(this.stack)) {
-			this.stack = [new Node4(), ...this.stack]
-			return this
-		}		if (startsWithNode2(this.stack)) {
-			this.stack = [new Node4(), ...this.stack]
-			return this
-		}
+		this.stack = [new Node4(), ...this.stack]
+		return this
 	}
 	and_ = (...a: any[]) => {
 		if (startsWithNode37Node26(this.stack)) {
@@ -2208,19 +1947,7 @@ class FluentImpl {
 			this.stack = [new Node30(content), ...tail]
 			return this.and_()
 		}
-		if (startsWithNode32(this.stack)) {
-			this.stack = [new Node17(), ...this.stack]
-			return this
-		}		if (startsWithNode31(this.stack)) {
-			this.stack = [new Node17(), ...this.stack]
-			return this
-		}		if (startsWithNode30(this.stack)) {
-			this.stack = [new Node17(), ...this.stack]
-			return this
-		}		if (startsWithNode29(this.stack)) {
-			this.stack = [new Node17(), ...this.stack]
-			return this
-		}		if (startsWithNode28Node26Node28Node26(this.stack)) {
+		if (startsWithNode28Node26Node28Node26(this.stack)) {
 			const x1 = this.stack[2].arg1
 			const x2 = this.stack[0].arg1
 			const content = new BinTimes(x1, x2)
@@ -2524,13 +2251,12 @@ class FluentImpl {
 			this.stack = [new Node30(content), ...tail]
 			return this.and_()
 		}
-
+		this.stack = [new Node17(), ...this.stack]
+		return this
 	}
 	assign = (...a: any[]) => {
-		if (startsWithNode13(this.stack)) {
-			this.stack = [new Node12(), ...this.stack]
-			return this
-		}
+		this.stack = [new Node12(), ...this.stack]
+		return this
 	}
 	do_ = (...a: any[]) => {
 		if (startsWithNode37Node26(this.stack)) {
@@ -2749,10 +2475,7 @@ class FluentImpl {
 			this.stack = [new Node30(content), ...tail]
 			return this.do_()
 		}
-		if (startsWithNode30(this.stack)) {
-			this.stack = [new Node7(), ...this.stack]
-			return this
-		}		if (startsWithNode29Node17Node32Node19(this.stack)) {
+		if (startsWithNode29Node17Node32Node19(this.stack)) {
 			const x1 = this.stack[2].arg1
 			const x2 = this.stack[0].arg1
 			const content = new BoolAnd(x1, x2)
@@ -3088,7 +2811,8 @@ class FluentImpl {
 			this.stack = [new Node30(content), ...tail]
 			return this.do_()
 		}
-
+		this.stack = [new Node7(), ...this.stack]
+		return this
 	}
 	else_ = (...a: any[]) => {
 		if (startsWithNode37Node26(this.stack)) {
@@ -3626,10 +3350,7 @@ class FluentImpl {
 			this.stack = [new Node2(content), ...tail]
 			return this.else_()
 		}
-		if (startsWithNode8(this.stack)) {
-			this.stack = [new Node6(), ...this.stack]
-			return this
-		}		if (startsWithNode3Node4Node10Node7(this.stack)) {
+		if (startsWithNode3Node4Node10Node7(this.stack)) {
 			const x1 = this.stack[2].arg1
 			const x2 = this.stack[0].arg1
 			const content = new AndThen(x1, x2)
@@ -3669,7 +3390,8 @@ class FluentImpl {
 			this.stack = [new Node2(content), ...tail]
 			return this.else_()
 		}
-
+		this.stack = [new Node6(), ...this.stack]
+		return this
 	}
 	end = (...a: any[]) => {
 		if (startsWithNode37Node26(this.stack)) {
@@ -4249,8 +3971,7 @@ class FluentImpl {
 		}
 		if (startsWithNode2(this.stack)) {
 			return this.stack[0].arg1
-		}
-	}
+		}	}
 	eq = (...a: any[]) => {
 		if (startsWithNode37Node26(this.stack)) {
 			const x1 = this.stack[0].arg1
@@ -4632,43 +4353,16 @@ class FluentImpl {
 			this.stack = [new Node11(content), ...tail]
 			return this.eq()
 		}
-		if (startsWithNode20(this.stack)) {
-			this.stack = [new Node15(), ...this.stack]
-			return this
-		}
+		this.stack = [new Node15(), ...this.stack]
+		return this
 	}
 	false_ = (...a: any[]) => {
-		if (startsWithNode19(this.stack)) {
-			this.stack = [new Node33(), ...this.stack]
-			return this
-		}		if (startsWithNode18(this.stack)) {
-			this.stack = [new Node33(), ...this.stack]
-			return this
-		}		if (startsWithNode17(this.stack)) {
-			this.stack = [new Node33(), ...this.stack]
-			return this
-		}		if (startsWithNode16(this.stack)) {
-			this.stack = [new Node33(), ...this.stack]
-			return this
-		}
+		this.stack = [new Node33(), ...this.stack]
+		return this
 	}
 	if_ = (...a: any[]) => {
-		if (startsWithNode7(this.stack)) {
-			this.stack = [new Node19(), ...this.stack]
-			return this
-		}		if (startsWithNode6(this.stack)) {
-			this.stack = [new Node19(), ...this.stack]
-			return this
-		}		if (startsWithNode5(this.stack)) {
-			this.stack = [new Node19(), ...this.stack]
-			return this
-		}		if (startsWithNode4(this.stack)) {
-			this.stack = [new Node19(), ...this.stack]
-			return this
-		}		if (startsWithNode1(this.stack)) {
-			this.stack = [new Node19(), ...this.stack]
-			return this
-		}
+		this.stack = [new Node19(), ...this.stack]
+		return this
 	}
 	le = (...a: any[]) => {
 		if (startsWithNode37Node26(this.stack)) {
@@ -5051,10 +4745,8 @@ class FluentImpl {
 			this.stack = [new Node11(content), ...tail]
 			return this.le()
 		}
-		if (startsWithNode20(this.stack)) {
-			this.stack = [new Node22(), ...this.stack]
-			return this
-		}
+		this.stack = [new Node22(), ...this.stack]
+		return this
 	}
 	minus = (...a: any[]) => {
 		if (startsWithNode37Node26(this.stack)) {
@@ -5197,76 +4889,16 @@ class FluentImpl {
 			this.stack = [new Node11(content), ...tail]
 			return this.minus()
 		}
-		if (startsWithNode28(this.stack)) {
-			this.stack = [new Node24(), ...this.stack]
-			return this
-		}		if (startsWithNode27(this.stack)) {
-			this.stack = [new Node24(), ...this.stack]
-			return this
-		}		if (startsWithNode23(this.stack)) {
-			this.stack = [new Node24(), ...this.stack]
-			return this
-		}		if (startsWithNode21(this.stack)) {
-			this.stack = [new Node24(), ...this.stack]
-			return this
-		}		if (startsWithNode20(this.stack)) {
-			this.stack = [new Node24(), ...this.stack]
-			return this
-		}		if (startsWithNode14(this.stack)) {
-			this.stack = [new Node24(), ...this.stack]
-			return this
-		}		if (startsWithNode11(this.stack)) {
-			this.stack = [new Node24(), ...this.stack]
-			return this
-		}
+		this.stack = [new Node24(), ...this.stack]
+		return this
 	}
 	not_ = (...a: any[]) => {
-		if (startsWithNode19(this.stack)) {
-			this.stack = [new Node18(), ...this.stack]
-			return this
-		}		if (startsWithNode18(this.stack)) {
-			this.stack = [new Node18(), ...this.stack]
-			return this
-		}		if (startsWithNode17(this.stack)) {
-			this.stack = [new Node18(), ...this.stack]
-			return this
-		}		if (startsWithNode16(this.stack)) {
-			this.stack = [new Node18(), ...this.stack]
-			return this
-		}
+		this.stack = [new Node18(), ...this.stack]
+		return this
 	}
 	num = (...a: any[]) => {
-		if (startsWithNode26(this.stack)) {
-			this.stack = [new Node34(a[0] as number), ...this.stack]
-			return this
-		}		if (startsWithNode25(this.stack)) {
-			this.stack = [new Node34(a[0] as number), ...this.stack]
-			return this
-		}		if (startsWithNode24(this.stack)) {
-			this.stack = [new Node34(a[0] as number), ...this.stack]
-			return this
-		}		if (startsWithNode22(this.stack)) {
-			this.stack = [new Node34(a[0] as number), ...this.stack]
-			return this
-		}		if (startsWithNode19(this.stack)) {
-			this.stack = [new Node34(a[0] as number), ...this.stack]
-			return this
-		}		if (startsWithNode18(this.stack)) {
-			this.stack = [new Node34(a[0] as number), ...this.stack]
-			return this
-		}		if (startsWithNode17(this.stack)) {
-			this.stack = [new Node34(a[0] as number), ...this.stack]
-			return this
-		}		if (startsWithNode16(this.stack)) {
-			this.stack = [new Node34(a[0] as number), ...this.stack]
-			return this
-		}		if (startsWithNode15(this.stack)) {
-			this.stack = [new Node34(a[0] as number), ...this.stack]
-			return this
-		}		if (startsWithNode12(this.stack)) {
-			this.stack = [new Node34(a[0] as number), ...this.stack]
-			return this
-		}
+		this.stack = [new Node34(a[0] as number), ...this.stack]
+		return this
 	}
 	plus = (...a: any[]) => {
 		if (startsWithNode37Node26(this.stack)) {
@@ -5409,46 +5041,12 @@ class FluentImpl {
 			this.stack = [new Node11(content), ...tail]
 			return this.plus()
 		}
-		if (startsWithNode28(this.stack)) {
-			this.stack = [new Node25(), ...this.stack]
-			return this
-		}		if (startsWithNode27(this.stack)) {
-			this.stack = [new Node25(), ...this.stack]
-			return this
-		}		if (startsWithNode23(this.stack)) {
-			this.stack = [new Node25(), ...this.stack]
-			return this
-		}		if (startsWithNode21(this.stack)) {
-			this.stack = [new Node25(), ...this.stack]
-			return this
-		}		if (startsWithNode20(this.stack)) {
-			this.stack = [new Node25(), ...this.stack]
-			return this
-		}		if (startsWithNode14(this.stack)) {
-			this.stack = [new Node25(), ...this.stack]
-			return this
-		}		if (startsWithNode11(this.stack)) {
-			this.stack = [new Node25(), ...this.stack]
-			return this
-		}
+		this.stack = [new Node25(), ...this.stack]
+		return this
 	}
 	skip = (...a: any[]) => {
-		if (startsWithNode7(this.stack)) {
-			this.stack = [new Node35(), ...this.stack]
-			return this
-		}		if (startsWithNode6(this.stack)) {
-			this.stack = [new Node35(), ...this.stack]
-			return this
-		}		if (startsWithNode5(this.stack)) {
-			this.stack = [new Node35(), ...this.stack]
-			return this
-		}		if (startsWithNode4(this.stack)) {
-			this.stack = [new Node35(), ...this.stack]
-			return this
-		}		if (startsWithNode1(this.stack)) {
-			this.stack = [new Node35(), ...this.stack]
-			return this
-		}
+		this.stack = [new Node35(), ...this.stack]
+		return this
 	}
 	then_ = (...a: any[]) => {
 		if (startsWithNode37Node26(this.stack)) {
@@ -5639,10 +5237,7 @@ class FluentImpl {
 			this.stack = [new Node30(content), ...tail]
 			return this.then_()
 		}
-		if (startsWithNode32(this.stack)) {
-			this.stack = [new Node5(), ...this.stack]
-			return this
-		}		if (startsWithNode31Node18Node19(this.stack)) {
+		if (startsWithNode31Node18Node19(this.stack)) {
 			const x1 = this.stack[0].arg1
 			const content = new BoolNot(x1)
 			const tail = this.stack.slice(2)
@@ -6006,7 +5601,8 @@ class FluentImpl {
 			this.stack = [new Node30(content), ...tail]
 			return this.then_()
 		}
-
+		this.stack = [new Node5(), ...this.stack]
+		return this
 	}
 	times = (...a: any[]) => {
 		if (startsWithNode37Node26(this.stack)) {
@@ -6149,109 +5745,20 @@ class FluentImpl {
 			this.stack = [new Node11(content), ...tail]
 			return this.times()
 		}
-		if (startsWithNode28(this.stack)) {
-			this.stack = [new Node26(), ...this.stack]
-			return this
-		}		if (startsWithNode27(this.stack)) {
-			this.stack = [new Node26(), ...this.stack]
-			return this
-		}		if (startsWithNode23(this.stack)) {
-			this.stack = [new Node26(), ...this.stack]
-			return this
-		}		if (startsWithNode21(this.stack)) {
-			this.stack = [new Node26(), ...this.stack]
-			return this
-		}		if (startsWithNode20(this.stack)) {
-			this.stack = [new Node26(), ...this.stack]
-			return this
-		}		if (startsWithNode14(this.stack)) {
-			this.stack = [new Node26(), ...this.stack]
-			return this
-		}		if (startsWithNode11(this.stack)) {
-			this.stack = [new Node26(), ...this.stack]
-			return this
-		}
+		this.stack = [new Node26(), ...this.stack]
+		return this
 	}
 	true_ = (...a: any[]) => {
-		if (startsWithNode19(this.stack)) {
-			this.stack = [new Node36(), ...this.stack]
-			return this
-		}		if (startsWithNode18(this.stack)) {
-			this.stack = [new Node36(), ...this.stack]
-			return this
-		}		if (startsWithNode17(this.stack)) {
-			this.stack = [new Node36(), ...this.stack]
-			return this
-		}		if (startsWithNode16(this.stack)) {
-			this.stack = [new Node36(), ...this.stack]
-			return this
-		}
+		this.stack = [new Node36(), ...this.stack]
+		return this
 	}
 	var = (...a: any[]) => {
-		if (startsWithNode26(this.stack)) {
-			this.stack = [new Node37(a[0] as string), ...this.stack]
-			return this
-		}		if (startsWithNode25(this.stack)) {
-			this.stack = [new Node37(a[0] as string), ...this.stack]
-			return this
-		}		if (startsWithNode24(this.stack)) {
-			this.stack = [new Node37(a[0] as string), ...this.stack]
-			return this
-		}		if (startsWithNode22(this.stack)) {
-			this.stack = [new Node37(a[0] as string), ...this.stack]
-			return this
-		}		if (startsWithNode19(this.stack)) {
-			this.stack = [new Node37(a[0] as string), ...this.stack]
-			return this
-		}		if (startsWithNode18(this.stack)) {
-			this.stack = [new Node37(a[0] as string), ...this.stack]
-			return this
-		}		if (startsWithNode17(this.stack)) {
-			this.stack = [new Node37(a[0] as string), ...this.stack]
-			return this
-		}		if (startsWithNode16(this.stack)) {
-			this.stack = [new Node37(a[0] as string), ...this.stack]
-			return this
-		}		if (startsWithNode15(this.stack)) {
-			this.stack = [new Node37(a[0] as string), ...this.stack]
-			return this
-		}		if (startsWithNode12(this.stack)) {
-			this.stack = [new Node37(a[0] as string), ...this.stack]
-			return this
-		}		if (startsWithNode7(this.stack)) {
-			this.stack = [new Node13(a[0] as string), ...this.stack]
-			return this
-		}		if (startsWithNode6(this.stack)) {
-			this.stack = [new Node13(a[0] as string), ...this.stack]
-			return this
-		}		if (startsWithNode5(this.stack)) {
-			this.stack = [new Node13(a[0] as string), ...this.stack]
-			return this
-		}		if (startsWithNode4(this.stack)) {
-			this.stack = [new Node13(a[0] as string), ...this.stack]
-			return this
-		}		if (startsWithNode1(this.stack)) {
-			this.stack = [new Node13(a[0] as string), ...this.stack]
-			return this
-		}
+		this.stack = [new Node37(a[0] as string), ...this.stack]
+		return this
 	}
 	while_ = (...a: any[]) => {
-		if (startsWithNode7(this.stack)) {
-			this.stack = [new Node16(), ...this.stack]
-			return this
-		}		if (startsWithNode6(this.stack)) {
-			this.stack = [new Node16(), ...this.stack]
-			return this
-		}		if (startsWithNode5(this.stack)) {
-			this.stack = [new Node16(), ...this.stack]
-			return this
-		}		if (startsWithNode4(this.stack)) {
-			this.stack = [new Node16(), ...this.stack]
-			return this
-		}		if (startsWithNode1(this.stack)) {
-			this.stack = [new Node16(), ...this.stack]
-			return this
-		}
+		this.stack = [new Node16(), ...this.stack]
+		return this
 	}
 }
 
