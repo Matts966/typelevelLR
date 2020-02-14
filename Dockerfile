@@ -6,5 +6,5 @@ COPY stack.yaml .
 COPY stack.yaml.lock .
 COPY typelevelLR.cabal .
 RUN stack setup
-RUN apt-get install -y scala ruby
+RUN apt-get install -y scala ruby nodejs
 ENV PATH=$PATH:/root/.local/bin
