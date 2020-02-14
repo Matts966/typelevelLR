@@ -6,7 +6,7 @@ test: build
 		stack test --allow-different-user
 measure: build
 	docker run -t -v `pwd`:/workdir csg-tokyo/typelevellr:latest \
-		stack install && cd experiment && npm ci && \
+		stack install --allow-different-user && cd experiment && npm ci && \
 		ruby randomchain-experiment.rb --ts -v -n 300 -m 10 \
 			--num-warmup 0 --num-measure 1
 build:
