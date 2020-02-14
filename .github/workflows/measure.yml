@@ -3,7 +3,7 @@ name: measure
 on: [push]
 
 jobs:
-    measure:
+  measure:
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v1
